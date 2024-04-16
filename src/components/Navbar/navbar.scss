@@ -1,0 +1,111 @@
+@import '../../index.scss';
+
+.navbar {
+    // height: 100px;
+    display: block;
+    padding: 0;
+
+    // margin-top: 50px;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: 1948px;
+        background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
+        filter: blur(350px);
+        margin-right: -5%;
+        margin-top: -12%;
+        border-radius: 50%;
+        width: 450px;
+        height: 100vh;
+        flex-shrink: 0;
+
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        border-radius: 1948px;
+        background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
+        filter: blur(300px);
+
+        margin: 0 auto;
+        margin-top: -5%;
+        border-radius: 50%;
+        width: 70%;
+        height: 200px;
+        flex-shrink: 0;
+
+    }
+
+
+
+    .nav-container {
+        position: fixed;
+        padding-top: 15px;
+        padding-bottom: 8px;
+        left: 0;
+        right: 0;
+        top: -4px;
+        z-index: 1000;
+        transition: all .3s ease;
+
+        &.active {
+
+            top: 0px;
+            // background: linear-gradient(180deg, rgba(107, 32, 211, 0.9) 0%, #6B20D3 100%);
+            transition: all .5s ease;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 1440px;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 2px 10px;
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     bottom: 0;
+            //     left: 50%;
+            //     transform: translateX(-50%);
+            //     height: 1px;
+            //     width: 100vw;
+            //     z-index: 1;
+            //     top: 100%;
+            //     background-color: rgba(255, 255, 255, 0.2);
+            // }
+
+            @include mobile {
+                width: 100%;
+            }
+
+            @include x-large {
+                width: 100%;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            // .logo {
+            //     @include mobile {
+            //         display: none;
+            //     }
+            // }
+
+
+
+        }
+    }
+}

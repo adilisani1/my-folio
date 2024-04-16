@@ -1,0 +1,444 @@
+@import "../../index.scss";
+
+.portfolio {
+    position: relative;
+    z-index: 1;
+    padding-block-end: 100px;
+
+    .portfolio-container {
+        max-width: 1150px;
+        padding: 0 50px;
+        margin: auto;
+
+        @include large {
+            max-width: 870px;
+        }
+
+        .content-width {
+            max-width: 850px;
+            width: 100%;
+            margin-left: auto;
+
+            @include xx-large {
+                max-width: 800px;
+
+            }
+
+            @include x-large {
+                max-width: 770px;
+
+            }
+
+            @include large {
+                max-width: 100%;
+
+            }
+
+            .portfolio-me {
+                position: relative;
+                margin-bottom: 20px;
+                display: flex;
+                gap: 8px;
+                border: 1px solid #fff;
+                max-width: 200px;
+                padding: 12px;
+                justify-content: center;
+                border-radius: 50px;
+                -webkit-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                margin-bottom: 35px;
+
+                &:hover {
+                    border: 1px solid #8750f7;
+                    color: #fff;
+
+                    .portfolio-icon {
+                        color: #ffffff;
+                    }
+                }
+
+                .portfolio-text {
+                    // color: #FFF;
+                    font-family: 'Mont-Bold', sans-serif;
+                    font-size: 22px;
+                    line-height: normal;
+                    font-weight: 700;
+                    text-transform: uppercase;
+
+                    @include mobile {
+                        font-size: 18px;
+                    }
+                }
+
+                .portfolio-icon {
+                    color: #8750f7;
+
+                }
+            }
+
+            .portfolio-title {
+                font-family: "Mont-Bold", sans-serif;
+                font-size: 42px;
+                line-height: normal;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+
+            // .portfolio-work-wrapper {
+            //     display: grid;
+            //     gap: 30px;
+            //     grid-template-columns: repeat(2, 1fr);
+
+            //     .portfolio-work:nth-of-type(3n+1) {
+            //         grid-column: 1 / -1;
+            //     }
+
+            //     @include xx-large {
+            //         .portfolio-work:nth-of-type(3n+1) {
+            //             grid-column: span 2;
+            //             max-width: 1200px;
+            //             margin: 0 auto;
+            //         }
+            //     }
+
+            //     @include mobile {
+            //         grid-template-columns: 1fr;
+
+            //     }
+
+            //     .portfolio-work-image {
+            //         width: 100%;
+            //         position: relative;
+
+            //         img {
+            //             width: 100%;
+            //             height: 400px;
+            //             object-fit: cover;
+            //             transition: transform 0.5s ease;
+            //         }
+
+            //         .portfolio-overlay {
+            //             position: absolute;
+            //             bottom: 0;
+            //             background: rgba(0, 0, 0, 0.5);
+            //             color: #fff;
+            //             width: 100%;
+            //             transform: translateY(100%);
+            //             transition: transform 0.5s ease;
+            //             padding: 20px;
+            //             opacity: 0;
+
+            //             .portfolio-title {
+            //                 font-weight: bold;
+            //             }
+
+            //             .portfolio-desc {
+            //                 font-size: 14px;
+            //             }
+            //         }
+
+            //         &:hover img {
+            //             transform: scale(1.1);
+            //         }
+
+            //         // &:hover .portfolio-overlay {
+            //         //     transform: translateY(0);
+            //         //     opacity: 1;
+            //         // }
+            //     }
+
+            //     .more-work-wrapper {
+            //         margin-top: 100px;
+            //         display: flex;
+            //         justify-content: center;
+
+
+            //         .more-work-btn {
+            //             width: 208px;
+            //             height: 208px;
+            //             background: #9d3bff1a;
+            //             border-radius: 50%;
+            //             display: flex;
+            //             align-items: center;
+            //             justify-content: center;
+            //             text-align: center;
+            //             position: relative;
+            //             overflow: hidden;
+
+            //             &::before {
+            //                 width: 208px;
+            //                 height: 208px;
+            //                 border-radius: 50%;
+            //                 border: 1px solid #8750f7;
+            //                 content: "";
+            //                 position: absolute;
+            //                 top: -3px;
+            //                 left: -3px;
+            //                 transition: all 0.4s;
+            //             }
+
+            //             &:hover::before {
+            //                 top: -6px;
+            //                 left: 0px;
+            //             }
+
+            //             .box {
+            //                 display: flex;
+            //                 flex-direction: column;
+            //                 gap: 10px;
+            //                 align-items: center;
+
+
+            //                 .arrow {
+            //                     font-size: 26px;
+
+            //                 }
+
+            //                 .textmore {
+            //                     font-family: 'Mont-Regular', sans-serif;
+            //                     font-size: 17px;
+            //                 }
+            //             }
+
+            //         }
+            //     }
+            // }
+
+            // .portfolio-inside {
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     gap: 20px;
+            //     display: grid;
+            //     grid-template-columns: 1fr 1fr;
+            //     gap: 10px;
+
+            //     @include mobile {
+            //         grid-template-columns: 1fr;
+            //     }
+
+
+            //     .portfolio-work-image {
+            //         flex: 0 0 auto;
+            //         width: 100%;
+
+            //         @include mobile {
+            //             width: 50%;
+            //         }
+
+            //         .portfolio-img {
+            //             max-width: 25rem;
+            //             border-radius: 10px;
+            //             height: 400px;
+            //             object-fit: cover;
+
+            //             @include mobile {
+            //                 max-width: 100%;
+            //             }
+            //         }
+            //     }
+
+            //     .portfolio-work-text {
+            //         flex: auto;
+            //         display: flex;
+            //         flex-direction: column;
+            //         align-items: flex-start;
+            //         padding: 32px 22px 32px 22px;
+            //         background-color: rgb(55 55 55 / 25%);
+            //         border-radius: 16px;
+
+            //         .category {
+            //             border: 1px solid #8750f7;
+            //             display: flex;
+            //             align-items: center;
+            //             justify-content: center;
+            //             gap: 10px;
+            //             padding: 15px 30px;
+            //             border-radius: 50px;
+            //             -webkit-transition: all 0.5s ease;
+            //             -o-transition: all 0.5s ease;
+            //             transition: all 0.5s ease;
+            //             margin-bottom: 25px;
+
+            //             p {
+            //                 color: #ffffff;
+            //                 font-size: 15px;
+            //             }
+            //         }
+
+            //         .about-portfolio {
+            //             display: flex;
+            //             flex-direction: column;
+            //             align-items: flex-start;
+            //             flex: auto;
+            //             justify-content: flex-end;
+
+
+            //             h3 {
+            //                 // margin-top: 3em;
+            //                 font-family: 'Mont-Bold', sans-serif;
+            //                 font-size: 22px;
+            //                 line-height: normal;
+            //                 font-weight: 700;
+            //                 text-transform: uppercase;
+            //                 line-height: normal;
+            //                 margin-bottom: 10px;
+
+            //             }
+
+            //             p {
+            //                 font-size: 14px;
+            //                 font-weight: 400;
+            //                 line-height: 23px;
+            //                 margin-bottom: 20px;
+            //             }
+
+            //             .view-button {
+            //                 background-color: #ffffff;
+
+            //                 color: #8750f7;
+            //                 border-radius: 8px;
+            //                 padding: 20px 30px 20px 30px;
+            //                 text-decoration: none;
+            //                 font-weight: 700;
+            //                 font-family: 'Mont-Bold', sans-serif;
+            //             }
+            //         }
+            //     }
+            // }
+
+            .portfolio-list {
+                display: flex;
+                gap: 30px;
+
+                @include mobile {
+                    flex-direction: column;
+                }
+
+                .portfolio-card {
+                    position: relative;
+                    margin-block-end: 80px;
+
+                    @include large {
+                        margin-block-end: 50px;
+                    }
+
+                    &:hover {
+                        .see-more {
+                            opacity: 1;
+                            transform: translateX(-20px);
+                        }
+                    }
+
+                    .has-before {
+                        position: relative;
+                        z-index: 1;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                        }
+                    }
+
+                    .img-holder {
+                        aspect-ratio: var(--width) / var(--height);
+                        background-color: hsl(0, 0%, 20%);
+                        overflow: hidden;
+                    }
+
+                    .img-holder.has-before::before {
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50%;
+                        background-image: var(--gradient-1);
+                    }
+
+                    .img-cover {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .card-content,
+                    .see-more {
+                        position: absolute;
+                        z-index: 1;
+                    }
+
+                    .card-content {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 45px 35px;
+
+
+                        h3 {
+                            font-family: 'Mont-Bold', sans-serif;
+                            font-size: 27px;
+                            line-height: normal;
+                            font-weight: 900;
+                            text-transform: uppercase;
+                            margin-bottom: 10px;
+
+                            @include mobile {
+                                font-size: 20px;
+                            }
+
+                            &:hover {
+                                color: #8750f7;
+                                text-decoration: underline;
+                            }
+                        }
+
+                        .card-tag {
+                            font-family: 'Mont-Regular', sans-serif;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .see-more {
+                        right: 20px;
+                        bottom: 50px;
+                        width: 45px;
+                        height: 45px;
+                        background-color: #ffffff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50px;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        -webkit-transition: all 0.5s ease;
+                        -o-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                        opacity: 0;
+                        transform: translateX(60px);
+
+                        &:hover {
+                            background-color: #8750f7;
+
+                            svg {
+                                fill: #fff;
+                            }
+                        }
+
+                        svg {
+                            width: 30px;
+                            height: 30px;
+                            font-size: bold;
+                            fill: #8750f7;
+
+
+                        }
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+:root {
+    --smokey-black: hsl(0, 0%, 6%);
+    --transition-2: 0.5s ease;
+    --gradient-1: linear-gradient(180deg, transparent, var(--smokey-black));
+    --gradient-2: linear-gradient(180deg, var(--smokey-black) 25%, hsla(0, 0%, 0%, 0.6) 80%);
+}
+
+@mixin font-face($name, $src, $weight) {
+    @font-face {
+        font-family: $name;
+        src: url($src);
+        font-weight: $weight;
+    }
+}
+
+
+
+@font-face {
+    font-family: 'Mont-Light';
+    src: url('/font/Mont-Light.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Mont-Regular';
+    src: url('/font/Mont-Regular.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Mont-Bold';
+    src: url('/font/Mont-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Mont-Regular", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+:focus-visible {
+    outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(0, 0%, 16%);
+}
+
+ul {
+    list-style: none;
+}
+
+#main-content {
+    overflow: hidden;
+}
+
+.hero-section {
+    padding: 200px 0 50px;
+    position: relative;
+    overflow: hidden;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        border-radius: 1948px;
+        background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
+        filter: blur(270px);
+        margin-top: 1%;
+        border-radius: 50%;
+        width: 450px;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        flex-shrink: 0;
+        right: 0;
+
+    }
+}
+
+.about-section {
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+.services-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.resume-section {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.portfolio-section {
+    padding-block: 80px;
+
+}
+
+.contact-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+// section {
+//     padding: 68px 0;
+//     position: relative;
+//     scroll-margin-top: 90px;
+//     overflow: clip;
+
+//     @media (min-width: 768px) {
+//         section {
+//             min-height: 100vh;
+//         }
+
+//     }
+// }
+
+//theme
+.theme {
+    transition: all 0.5s ease;
+}
+
+.light {
+    background-color: #ffffff;
+    color: rgb(42, 42, 42);
+}
+
+.dark {
+    background-color: #0D0A0F;
+    color: rgb(211, 211, 211);
+}
+
+
+
+
+
+
+
+
+@mixin xxx-large {
+    @media (max-width: 1555px) {
+        @content;
+    }
+}
+
+@mixin xx-large {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin x-large {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (max-width: 1220px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}

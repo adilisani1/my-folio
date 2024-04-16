@@ -1,0 +1,17 @@
+@import '../../index.scss';
+
+.cursor {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    z-index: 9993;
+    border: 1px solid #fff;
+
+
+    @include mobile {
+        display: none;
+
+    }
+
+}

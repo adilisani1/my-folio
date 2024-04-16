@@ -1,0 +1,110 @@
+import { useRef, useState } from "react";
+import "./contact.scss";
+
+
+const Contact = () => {
+    const ref = useRef();
+    const formRef = useRef();
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        // emailjs
+        //     .sendForm(
+        //         "service_94y20xo",
+        //         "template_v10u2oh",
+        //         formRef.current,
+        //         "pX_2hasGmGcuvjXIW"
+        //     )
+        //     .then(
+        //         (result) => {
+        //             setSuccess(true)
+        //         },
+        //         (error) => {
+        //             setError(true);
+        //         }
+        //     );
+    };
+
+    return (
+        <>
+
+            <div className='contact-wrapper'>
+                <div className="contact-container" >
+                    <div className='content-width'>
+                        <div
+                            ref={ref}
+                            className="contact">
+                            <div className="textContainer" >
+                                <div className='get_in_touch_container'>
+                                    <div className='touch-me'>
+                                        <span className="touch-icon ri-shake-hands-line"></span>
+                                        <p className='touch-text'>
+                                            Get in touch
+                                        </p>
+                                    </div>
+                                </div>
+                                <h1 >Let's make your brand brilliant!</h1>
+                                <p className="contact-text">
+                                    Feel free to reach out if you have any questions or need help with a project
+                                </p>
+                                {/* <div className="contact-info" >
+                                    <div className="item " >
+                                        <h2>Mail</h2>
+                                        <span>hello@react.dev</span>
+                                    </div>
+                                    <div className="item ">
+                                        <h2>Phone</h2>
+                                        <span>+1 234 5678</span>
+                                    </div>
+                                </div> */}
+
+                                {/* <ul
+                                    className="social-links flex items-center gap-3"
+                                >
+                                    <li>
+                                        <a className=" shadow" href="#">
+                                            <i className="icon ri-whatsapp-line"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="shadow " href="#">
+                                            <i className="icon ri-twitter-line"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="shadow" href="#">
+                                            <i className="icon ri-mail-line"></i>
+                                        </a>
+                                    </li>
+                                </ul> */}
+
+                            </div>
+
+                            <div className="formContainer">
+                                <form
+                                    ref={formRef}
+                                    onSubmit={sendEmail}>
+                                    <div className="name-or-email">
+                                        <input type="text" required placeholder="Name" name="name" />
+                                        <input type="email" required placeholder="Email" name="email" />
+                                    </div>
+                                    <input type="tel" placeholder="Phone (Optional)" name="phone" />
+                                    <textarea rows={8} placeholder="Message" name="message" />
+                                    <button>Submit</button>
+                                    {error && "Error"}
+                                    {success && "Success"}
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Contact;
