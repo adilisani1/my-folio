@@ -39,19 +39,53 @@ const About = () => {
     const container = useRef();
 
     useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger);
+
         var tl = gsap.timeline({
             scrollTrigger: {
-                start: "50% 60%",
-                end: "50% 50%",
-                scrub: true,
-                // markers: true
+                trigger: ".about-text-container",
+                start: "top bottom",
+                end: "top center",
+                scrub: 1,
+
             }
-        })
-        // tl.to(".about-text-container",
-        //     { yPercent: 0, duration: 1, opacity: 1, })
-        //     .from("img", { scale: 1, duration: 1, })
-    }, { scope: container })
+        });
+
+        tl.fromTo(".about-text-container", {
+            y: 150,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1,
+            duration: 2.5,
+            delay: 1,
+            stagger: 1,
+            ease: "none"
+        });
+        tl.fromTo(".skills-text-container", {
+            y: 150,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1,
+            duration: 2.5,
+            delay: 1,
+            stagger: 1,
+            ease: "none"
+        });
+
+        tl.fromTo(".skills .items", {
+            y: 80,
+            opacity: 0,
+        }, {
+            y: 0,
+            opacity: 1,
+            duration: 2.5,
+            delay: 1,
+            stagger: 1,
+            ease: "none",
+        });
+    }, { scope: container });
 
 
     return (
@@ -59,7 +93,7 @@ const About = () => {
             <div className='about-container' >
                 <div className='content-width'>
                     <div className='about-wrapper'>
-                        <div className='about-text-container'>
+                        <div className='about-text-container '>
                             <div className='about-me'>
 
                                 <span className="about-icon ri-user-settings-line"></span>
@@ -68,9 +102,11 @@ const About = () => {
                                 </h3>
 
                             </div>
-                            <p className='about-text'>I am a skilled web developer proficient in React JS, Redux,  and WordPress, with a strong background in JavaScript. </p>
-                            <p className='about-text'> Despite the challenges posed by Muscular Dystrophy and being wheelchair-bound for the past 10 years, I have continued to excel and demonstrate my ability to multitask and deliver high-quality work.
-                            </p>
+                            <div className="about-text-wrapper">
+                                <p className='about-text'>I am a skilled web developer proficient in React JS, Redux,  and WordPress, with a strong background in JavaScript. </p>
+                                <p className='about-text'> Despite the challenges posed by Muscular Dystrophy and being wheelchair-bound for the past 10 years, I have continued to excel and demonstrate my ability to multitask and deliver high-quality work.
+                                </p>
+                            </div>
                         </div>
 
                         <div className='skills-wrapper'>
@@ -138,11 +174,41 @@ const About = () => {
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
-                                                <img src="/figma.png" alt="" />
+                                                <img src="/wp.svg" alt="" />
                                             </div>
                                         </div>
                                         <div>
-                                            <h4 className="fz-18">Figma</h4>
+                                            <h4 className="fz-18">WordPress</h4>
+                                        </div>
+                                    </div>
+                                    <div className="skill-progress">
+                                        <span className="progress" style={{ width: "200px" }} />
+                                    </div>
+                                </div>
+                                <div className='items'>
+                                    <div className="item-data">
+                                        <div className="mr-30">
+                                            <div className="img icon-img-40">
+                                                <img src="/tail-1.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 className="fz-18">Tailwind CSS</h4>
+                                        </div>
+                                    </div>
+                                    <div className="skill-progress">
+                                        <span className="progress" style={{ width: "200px" }} />
+                                    </div>
+                                </div>
+                                <div className='items'>
+                                    <div className="item-data">
+                                        <div className="mr-30">
+                                            <div className="img icon-img-40">
+                                                <img src="/psd.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 className="fz-18">Adobe Photoshop</h4>
                                         </div>
                                     </div>
                                     <div className="skill-progress">
@@ -164,21 +230,23 @@ const About = () => {
                                         <span className="progress" style={{ width: "200px" }} />
                                     </div>
                                 </div>
+
                                 <div className='items'>
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
-                                                <img src="/wp.svg" alt="" />
+                                                <img src="/figma.png" alt="" />
                                             </div>
                                         </div>
                                         <div>
-                                            <h4 className="fz-18">WordPress</h4>
+                                            <h4 className="fz-18">Figma</h4>
                                         </div>
                                     </div>
                                     <div className="skill-progress">
                                         <span className="progress" style={{ width: "200px" }} />
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 

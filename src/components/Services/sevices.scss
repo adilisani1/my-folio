@@ -131,15 +131,50 @@
                         background-repeat: no-repeat;
                         background-size: contain;
 
+
+
+
                         &:hover {
                             border: 1px solid #8750f7;
                             background-position: 325px 120px;
 
                             svg {
-
                                 fill: #ffffff;
                             }
+
+
                         }
+
+                        @include xx-large {
+                            background-position: 300px -120px;
+
+                            &:hover {
+                                background-position: 300px 120px;
+                            }
+                        }
+
+                        @include x-large {
+                            background-position: 280px -120px;
+
+                            &:hover {
+                                background-position: 280px 120px;
+                            }
+                        }
+
+                        @include large {
+                            background-position: 315px -120px;
+
+                            &:hover {
+                                background-position: 315px 120px;
+                            }
+                        }
+
+                        @include tablet {
+                            background-image: none;
+
+
+                        }
+
 
                         svg {
                             width: 100%;

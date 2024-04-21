@@ -69,7 +69,7 @@ const Hero = () => {
                     <p>Frontend Engineer <br /> ( ReactJS ) </p>
                 </div>
                 <div className=''>
-                    <img className='prof-img' src='/public/my-self.jpg' alt="Profile Picture" width={300} height={300} />
+                    <img className='prof-img' src='/public/my-self2.jpg' alt="Profile Picture" width={300} height={300} />
                 </div>
                 <div className='bottom-part '>
                     <p>adil.isani1@gmail.com</p>
@@ -86,13 +86,14 @@ const Hero = () => {
                         <h1 >I am Muhammad Adil</h1>
                         <h3> Frontend Engineer (ReactJS) - Gamer -<br />DeveloperOnWheels ♿ </h3>
 
-                        <p>Where Passion Meets Precision: Unleashing Innovation from a Wheelchair, <br />
-                            Crafting Seamless Digital Experiences with React JS, Redux & WordPress,<br />
+                        <p>Where Passion Meets Precision: Unleashing Innovation from a Wheelchair,
+                            Crafting Seamless Digital Experiences with React JS, Redux & WordPress,
                             Defying Gravity, Redefining Web Development.
                         </p>
                         <a className='my-port'
-                            href='#portfolio'
+                            href='#Portfolio'
                             ref={portFolioLinkRef}
+
 
                         >
                             <i className="mouse-scroll ri-arrow-down-s-line"></i>
