@@ -1,95 +1,55 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef } from 'react'
 import './about.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
-// let imageOne = '/2.png';
-// let imageTwo = '/2.png'
-
 const About = () => {
-
-    const certificates = [
-        {
-            id: 1,
-            cardNumber: 1,
-            year: 2021,
-            // imgSrc: imageOne,
-        },
-        {
-            id: 2,
-            cardNumber: 2,
-            year: 2022,
-            // imgSrc: imageTwo,
-        },
-        {
-            id: 3,
-            cardNumber: 3,
-            year: 2023,
-            // imgSrc: imageOne,
-        }, {
-            id: 4,
-            cardNumber: 3,
-            year: 2023,
-            // imgSrc: imageOne,
-        },
-    ];
-
-
     const container = useRef();
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
+        // var tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".about-text-container",
+        //         start: "top bottom",
+        //         end: "top center",
+        //         scrub: 4,
+        //     }
+        // });
+        // tl.fromTo(".about-text-container", {
+        //     y: 250,
+        //     opacity: 0
+        // }, {
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 2.5,
+        //     ease: "power1.out"
+        // });
+        // tl.fromTo(".skills-text-container", {
+        //     y: 250,
+        //     opacity: 0
+        // }, {
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 2.5,
+        //     ease: "power1.out"
+        // });
 
-        var tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".about-text-container",
-                start: "top bottom",
-                end: "top center",
-                scrub: 1,
-
-            }
-        });
-
-        tl.fromTo(".about-text-container", {
-            y: 150,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 2.5,
-            delay: 1,
-            stagger: 1,
-            ease: "none"
-        });
-        tl.fromTo(".skills-text-container", {
-            y: 150,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 2.5,
-            delay: 1,
-            stagger: 1,
-            ease: "none"
-        });
-
-        tl.fromTo(".skills .items", {
-            y: 80,
-            opacity: 0,
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 2.5,
-            delay: 1,
-            stagger: 1,
-            ease: "none",
-        });
+        // tl.fromTo(".skills .items", {
+        //     y: 250,
+        //     opacity: 0,
+        // }, {
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 2.5,
+        //     stagger: 0.5,
+        //     ease: "power1.out"
+        // });
     }, { scope: container });
 
 
     return (
-        <div className='about' ref={container}>
+        <section id='About' className='about' ref={container} data-scroll-section>
             <div className='about-container' >
                 <div className='content-width'>
                     <div className='about-wrapper'>
@@ -261,7 +221,7 @@ const About = () => {
 
             </div>
 
-        </div >
+        </section >
     )
 }
 

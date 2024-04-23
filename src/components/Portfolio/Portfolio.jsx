@@ -1,44 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './portfolio.scss';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import portfolioImgOne from '/portfolio-img.webp';
-import portfolioImgTwo from '/portfolio-img2.webp';
-import portfolioImgThree from '/portfolio-img3.webp';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Portfolio = () => {
-
-    const projects = [
-        {
-            id: 1,
-            title: "React Commerce",
-            img: portfolioImgOne,
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-        },
-        {
-            id: 2,
-            title: "Next.js Blog",
-            img: portfolioImgTwo,
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-        },
-        {
-            id: 3,
-            title: "Vanilla JS App",
-            img: portfolioImgThree,
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-        },
-        {
-            id: 4,
-            title: "Music App",
-            img: portfolioImgThree,
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-        },
-    ];
-
-
 
     const porfolioContainer = useRef();
 
@@ -47,36 +15,10 @@ const Portfolio = () => {
     }, { scope: porfolioContainer });
 
 
-
     return (
-        <div className='portfolio'>
-            <div className="portfolio-container" ref={porfolioContainer}>
+        <section id='Portfolio' className='portfolio ' ref={porfolioContainer} data-scroll-section >
+            <div className="portfolio-container" >
                 <div className='content-width'>
-
-                    {/* <div className='portfolio-work-wrapper'>
-                        {projects.map((project, index) => (
-                            <div key={project.id} className={`portfolio-work `}>
-                                <div className='portfolio-work-image'>
-                                    <img className='portfolio-img' src={project.img} alt={project.title} />
-                                    <div className='portfolio-overlay'>
-                                        <div className='portfolio-title'>{project.title}</div>
-                                        <p className='portfolio-desc'>{project.desc}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                        <div className='more-work-wrapper'>
-
-                            <a href="#" className='more-work-btn'>
-                                <span className="box">
-                                    <i className="arrow ri-arrow-right-up-line"></i>
-                                    <span className="textmore">
-                                        Click More Work
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                    </div> */}
                     <div className='portfolio-list'>
                         <div className='portfolio-wrapper'>
                             <div className='portfolio-me'>
@@ -164,13 +106,22 @@ const Portfolio = () => {
 
                     </div>
 
-                    <a href="#" className="see-more">More Projects</a>
+                    <div className='more-project-wrapper'>
+                        <a href="#" className="more-projects" >
+                            <span class="btn-circle-text">
+                                Explore <br /> All Project
+                                <span class="arrow-down">
 
+                                </span>
+                            </span>
+
+                        </a>
+                    </div>
 
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 }
 

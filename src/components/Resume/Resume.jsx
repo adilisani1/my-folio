@@ -44,7 +44,7 @@ const Resume = () => {
 
 
     return (
-        <div className='resume' ref={container}>
+        <section id='Resume' className='resume' data-scroll-section>
             <div className='resume-container' >
                 <div className='content-width'>
                     {/* Exp / Specialization */}
@@ -148,7 +148,7 @@ const Resume = () => {
 
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

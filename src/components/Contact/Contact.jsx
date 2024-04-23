@@ -31,7 +31,7 @@ const Contact = () => {
     return (
         <>
 
-            <div className='contact-wrapper'>
+            <section id='Contact' className='contact-wrapper' data-scroll-section>
                 <div className="contact-container" >
                     <div className='content-width'>
                         <div
@@ -102,7 +102,7 @@ const Contact = () => {
 
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

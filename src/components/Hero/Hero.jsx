@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 import './hero.scss';
 import { Social } from '../Navbar/social/Social';
 import gsap from 'gsap';
@@ -7,6 +8,8 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 1024px)").matches);
+
     const portFolioImg = useRef();
     const portFolioLinkRef = useRef(null);
 
@@ -18,7 +21,6 @@ const Hero = () => {
             ease: 'linear',
         });
     }, {});
-
 
     useEffect(() => {
         const link = portFolioLinkRef.current;
@@ -59,9 +61,25 @@ const Hero = () => {
         };
     }, []);
 
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 1024px)");
+        const handleResize = () => {
+            setIsSmallScreen(mediaQuery.matches);
+        };
+
+        mediaQuery.addListener(handleResize);
+        handleResize();
+
+        return () => {
+            mediaQuery.removeListener(handleResize);
+        };
+    }, []);
+
+
     return (
-        <div>
-            <div className='left-side'>
+        <section {...(isSmallScreen ? { 'data-scroll-section': true } : {})}>
+            <div className='left-side' >
                 <div className='top-part '>
                     <a className='logo '>
                         <img style={{ width: "55px" }} src='/ad-logo.png' alt='adlogo' />
@@ -80,7 +98,7 @@ const Hero = () => {
                     <a className='resume' href='#resume'>Resume</a>
                 </div>
             </div>
-            <div className='wrapper'>
+            <div className='wrapper' {...(!isSmallScreen ? { 'data-scroll-section': true } : {})}>
                 <div className='textContainer' >
                     <div className='content-width'>
                         <h1 >I am Muhammad Adil</h1>
@@ -103,7 +121,7 @@ const Hero = () => {
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 

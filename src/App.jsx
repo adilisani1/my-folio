@@ -8,34 +8,25 @@ import Cursor from './components/cursor/Cursor';
 import Resume from './components/Resume/Resume';
 import Contact from './components/Contact/Contact';
 
+import React, { useState } from 'react';
+import useLocoScroll from './hooks/useLocoScroll';
+
 
 function App() {
+  useLocoScroll(true);
 
   return (
     <>
       <ThemeProvider>
         <Cursor />
-        <Navbar />
-        <div id="main-content">
-          <section id='Home' className='hero-section'
-          >
-            <Hero />
-          </section>
-          <section id='About' className='about-section'>
-            <About />
-          </section>
-          <section id='Services' className='services-section'>
-            <Services />
-          </section>
-          <section id='Resume' className='resume-section'>
-            <Resume />
-          </section>
-          <section id='Portfolio' className='portfolio-section'>
-            <Portfolio />
-          </section>
-          <section id='Contact' className='contact-section'>
-            <Contact />
-          </section>
+        <div id="main-content" >
+          <Navbar />
+          <Hero />
+          <About />
+          <Services />
+          <Resume />
+          <Portfolio />
+          <Contact />
         </div>
       </ThemeProvider>
     </>

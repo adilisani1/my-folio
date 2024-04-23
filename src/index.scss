@@ -1,6 +1,7 @@
 :root {
     --smokey-black: hsl(0, 0%, 6%);
     --transition-2: 0.5s ease;
+    --white: #fff;
     --gradient-1: linear-gradient(180deg, transparent, var(--smokey-black));
     --gradient-2: linear-gradient(180deg, var(--smokey-black) 25%, hsla(0, 0%, 0%, 0.6) 80%);
 }
@@ -48,11 +49,11 @@ a {
 
 html {
     scroll-behavior: smooth;
+
 }
 
 body {
-    min-height: 100%;
-    overflow-x: hidden;
+    font-family: "Mont-Regular", sans-serif;
 }
 
 :focus-visible {
@@ -60,11 +61,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #ffffff;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -74,11 +75,6 @@ body {
 ul {
     list-style: none;
 }
-
-#main-content {
-    overflow: hidden;
-}
-
 
 
 
@@ -124,11 +120,23 @@ ul {
     }
 }
 
+#main-content {
+    padding: 0;
+    position: relative;
+}
+
+section {
+    padding: 100px 0;
+
+
+    @include mobile {
+        padding: 50px 0;
+
+    }
+}
 
 .hero-section {
     padding: 200px 0 50px;
-    position: relative;
-    overflow: hidden;
 
     @include large {
         padding: 0;
@@ -168,8 +176,8 @@ ul {
 }
 
 .about-section {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding-top: 120px;
+    padding-bottom: 120px;
 
 
     @include large {

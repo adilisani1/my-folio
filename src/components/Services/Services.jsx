@@ -5,7 +5,7 @@ import { WebDevelopment, UxUiDesign, CmsDevelopment, LogoDesign } from './../../
 
 const Services = () => {
     return (
-        <div className='services'>
+        <section id='Services' className='services' data-scroll-section>
             <div className="services-container">
                 <div className='content-width'>
                     <div className='services-text-container'>
@@ -94,7 +94,7 @@ const Services = () => {
 
                 </div>
             </div>
-        </div >
+        </section >
     )
 }
 
