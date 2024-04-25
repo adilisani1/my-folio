@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import DarkMode from './../../Darkmode/DarkMode';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import { motion } from "framer-motion";
 
 export const Social = () => {
     const socialIco = useRef();
@@ -12,36 +11,41 @@ export const Social = () => {
         { name: 'whatsapp', iconClass: 'ri-whatsapp-fill social-icon', url: "https://wa.me/+923213427371" }
     ]
 
-    useGSAP(() => {
-        gsap.to(socialIco.current, {
-            duration: 0.8,
-            opacity: 1,
-            y: 5,
-            ease: "elastic.out(1, 0.3)",
-            stagger: 0.5
-        });
-    }, {});
+    // useGSAP(() => {
+    //     gsap.to(socialIco.current, {
+    //         duration: 0.8,
+    //         opacity: 1,
+    //         y: 5,
+    //         ease: "elastic.out(1, 0.3)",
+    //         stagger: 0.5
+    //     });
+    // }, {});
+
+
     return (
 
-        <div ref={socialIco}
+        <motion.div
+
             className='social'>
             {/* <DarkMode /> */}
             {socialIcons.map((icon, index) => {
                 const { iconClass, url } = icon;
                 return (
-                    <a
+                    <motion.a
                         key={index}
                         href={url}
                         target="_blank"
-                    >
-
+                        rel="noopener noreferrer"
+                        whileHover={{ rotate: 360, transition: { duration: 0.08, ease: "easeInOut" } }}
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 1, y: -5, transition: { type: "spring", duration: 0.05, ease: "easeInOut", stiffness: 600, damping: 25 } }}>
                         <i className={`${iconClass}`}></i>
-                    </a>
+                    </motion.a>
 
                 );
             })}
 
-        </div>
+        </motion.div>
 
     )
 }

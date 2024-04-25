@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import { motion } from "framer-motion"
 import './hero.scss';
 import { Social } from '../Navbar/social/Social';
 import gsap from 'gsap';
@@ -9,9 +9,23 @@ gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 1024px)").matches);
+    const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
 
     const portFolioImg = useRef();
-    const portFolioLinkRef = useRef(null);
+
+    const handleMouseMove = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
+        setHoverStyle({
+            x: x * 0.1,
+            y: y * 0.1
+        });
+    };
+
+    const handleMouseLeave = () => {
+        setHoverStyle({ x: 0, y: 0 });
+    };
 
     useGSAP(() => {
         gsap.to('.my-port img', {
@@ -21,46 +35,6 @@ const Hero = () => {
             ease: 'linear',
         });
     }, {});
-
-    useEffect(() => {
-        const link = portFolioLinkRef.current;
-
-        const handleHoverEnter = (e) => {
-            const buttonRect = link.getBoundingClientRect();
-            const centerX = buttonRect.left + buttonRect.width / 2;
-            const centerY = buttonRect.top + buttonRect.height / 2;
-            const hoverX = e.clientX;
-            const hoverY = e.clientY;
-            const distanceX = (hoverX - centerX) / (buttonRect.width / 2);
-            const distanceY = (hoverY - centerY) / (buttonRect.height / 2);
-            const movementFactor = 20;
-
-            gsap.to(link, {
-                duration: 0.5,
-                ease: 'power1.out',
-                x: distanceX * movementFactor,
-                y: distanceY * movementFactor,
-            });
-        };
-
-        const handleHoverLeave = () => {
-            gsap.to(link, {
-                duration: 0.5,
-                ease: 'power1.out',
-                x: 0,
-                y: 0,
-            });
-        };
-
-        link.addEventListener('mouseenter', handleHoverEnter);
-        link.addEventListener('mouseleave', handleHoverLeave);
-
-        return () => {
-            link.removeEventListener('mouseenter', handleHoverEnter);
-            link.removeEventListener('mouseleave', handleHoverLeave);
-        };
-    }, []);
-
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 1024px)");
@@ -76,7 +50,6 @@ const Hero = () => {
         };
     }, []);
 
-
     return (
         <section {...(isSmallScreen ? { 'data-scroll-section': true } : {})}>
             <div className='left-side' >
@@ -87,7 +60,7 @@ const Hero = () => {
                     <p>Frontend Engineer <br /> ( ReactJS ) </p>
                 </div>
                 <div className=''>
-                    <img className='prof-img' src='/public/my-self2.jpg' alt="Profile Picture" width={300} height={300} />
+                    <img className='prof-img' src='/my-self.jpg' alt="Profile Picture" width={300} height={300} />
                 </div>
                 <div className='bottom-part '>
                     <p>adil.isani1@gmail.com</p>
@@ -108,15 +81,19 @@ const Hero = () => {
                             Crafting Seamless Digital Experiences with React JS, Redux & WordPress,
                             Defying Gravity, Redefining Web Development.
                         </p>
-                        <a className='my-port'
+                        <motion.a
+                            className='my-port'
                             href='#Portfolio'
-                            ref={portFolioLinkRef}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                            style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out' }}
+                        // ref={portFolioLinkRef}
 
 
                         >
                             <i className="mouse-scroll ri-arrow-down-s-line"></i>
                             <img className='' ref={portFolioImg} src='/my-portfolio-img.png' alt="Profile Picture" />
-                        </a>
+                        </motion.a>
                     </div>
                 </div>
             </div>
