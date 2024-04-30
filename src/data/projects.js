@@ -9,24 +9,9 @@ export const portfolioData = [
                 link: 'https://ecommerce-frontend-git-master-adilisani1s-projects.vercel.app/',
                 imgSrc: '/portfolio-three.jpg',
                 width: 700,
-                height: 605,
+                height: 760,
                 alt: 'Ecommerce Project'
             },
-            {
-                id: 'p2',
-                title: 'Food App',
-                tag: 'food',
-                link: 'https://foodiemern-front-end.vercel.app/',
-                imgSrc: '/portfolio-one1.jpg',
-                width: 700,
-                height: 1091,
-                alt: 'Food App Project'
-            }
-        ]
-    },
-    {
-        id: 2,
-        projects: [
             {
                 id: 'p3',
                 title: 'Weather App',
@@ -36,6 +21,22 @@ export const portfolioData = [
                 width: 700,
                 height: 1000,
                 alt: 'Weather Project'
+            },
+        ]
+    },
+    {
+        id: 2,
+        projects: [
+
+            {
+                id: 'p2',
+                title: 'Food App',
+                tag: 'food',
+                link: 'https://foodiemern-front-end.vercel.app/',
+                imgSrc: '/portfolio-one1.jpg',
+                width: 700,
+                height: 1091,
+                alt: 'Food App Project'
             },
             {
                 id: 'p4',
@@ -48,5 +49,8 @@ export const portfolioData = [
                 alt: 'More App Project'
             }
         ]
-    }
+    },
+
+
+
 ];

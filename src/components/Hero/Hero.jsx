@@ -4,10 +4,14 @@ import './hero.scss';
 import { Social } from '../Navbar/social/Social';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 gsap.registerPlugin(useGSAP);
 
+
+
 const Hero = () => {
+    const { scroll } = useLocomotiveScroll();
     const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 1024px)").matches);
     const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
 
@@ -26,6 +30,7 @@ const Hero = () => {
     const handleMouseLeave = () => {
         setHoverStyle({ x: 0, y: 0 });
     };
+
 
     useGSAP(() => {
         gsap.to('.my-port img', {
@@ -50,8 +55,24 @@ const Hero = () => {
         };
     }, []);
 
+    //Handle ScrollPortfolio;
+
+    // const handleNavigatePortfolio = (event, item) => {
+    //     event.preventDefault();
+
+    //     const sectionPortfolio = document.querySelector(`#${item}`);
+
+    //     if (sectionPortfolio && scroll) {
+    //         scroll.scrollTo(sectionPortfolio, {
+    //             offset: '-100',
+    //             duration: 800,
+    //             easing: [0.25, 0.0, 0.35, 1.0]
+    //         });
+    //     }
+    // }
+
     return (
-        <section {...(isSmallScreen ? { 'data-scroll-section': true } : {})}>
+        <section style={{ willChange: "transform" }} {...(isSmallScreen ? { 'data-scroll-section': true } : {})} id='Home'>
             <div className='left-side' >
                 <div className='top-part '>
                     <a className='logo '>
@@ -71,7 +92,7 @@ const Hero = () => {
                     <a className='resume' href='#resume'>Resume</a>
                 </div>
             </div>
-            <div className='wrapper' {...(!isSmallScreen ? { 'data-scroll-section': true } : {})}>
+            <div className='wrapper' style={{ willChange: "transform" }} {...(!isSmallScreen ? { 'data-scroll-section': true } : {})} >
                 <div className='textContainer' >
                     <div className='content-width'>
                         <h1 >I am Muhammad Adil</h1>
@@ -86,11 +107,7 @@ const Hero = () => {
                             href='#Portfolio'
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
-                            style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out' }}
-                        // ref={portFolioLinkRef}
-
-
-                        >
+                            style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>
                             <i className="mouse-scroll ri-arrow-down-s-line"></i>
                             <img className='' ref={portFolioImg} src='/my-portfolio-img.png' alt="Profile Picture" />
                         </motion.a>

@@ -36,9 +36,9 @@ export const Social = () => {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ rotate: 360, transition: { duration: 0.08, ease: "easeInOut" } }}
-                        initial={{ opacity: 0, y: 100 }}
-                        animate={{ opacity: 1, y: -5, transition: { type: "spring", duration: 0.05, ease: "easeInOut", stiffness: 600, damping: 25 } }}>
+                        whileHover={{ rotate: 360, transition: { duration: 0.05, ease: "linear" } }}
+                        initial={{ opacity: 0, y: 100, rotate: 0 }}
+                        animate={{ opacity: 1, y: -5, transition: { type: "spring", duration: 0.05, ease: "easeInOut", stiffness: 300, damping: 30 } }}>
                         <i className={`${iconClass}`}></i>
                     </motion.a>
 

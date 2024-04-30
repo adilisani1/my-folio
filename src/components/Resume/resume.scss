@@ -2,8 +2,8 @@
 
 .resume {
     position: relative;
-    overflow: hidden;
-    z-index: 1;
+    // overflow: hidden;
+    // z-index: 1;
 
     .resume-container {
         max-width: 1130px;
@@ -51,6 +51,7 @@
                         border: 1px solid #fff;
                         padding: 12px 30px;
                         justify-content: center;
+                        align-items: center;
                         border-radius: 50px;
                         -webkit-transition: all 0.5s ease;
                         -o-transition: all 0.5s ease;
@@ -63,16 +64,16 @@
 
                             .speacial-icon {
                                 color: #ffffff;
+                                font-size: 17px;
                             }
 
                         }
 
                         .speacial-short-title {
                             // color: #FFF;
-                            font-family: 'Mont-Bold', sans-serif;
-                            font-size: 22px;
+                            font-family: var(--ff-recoleta);
+                            font-size: 17px;
                             font-style: normal;
-                            font-weight: 700;
                             line-height: normal;
                             text-transform: uppercase;
 

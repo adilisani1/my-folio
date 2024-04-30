@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
+import emailjs from "@emailjs/browser";
 
 
 const Contact = () => {
@@ -11,21 +12,21 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        // emailjs
-        //     .sendForm(
-        //         "service_94y20xo",
-        //         "template_v10u2oh",
-        //         formRef.current,
-        //         "pX_2hasGmGcuvjXIW"
-        //     )
-        //     .then(
-        //         (result) => {
-        //             setSuccess(true)
-        //         },
-        //         (error) => {
-        //             setError(true);
-        //         }
-        //     );
+        emailjs
+            .sendForm(
+                "service_94y20xo",
+                "template_v10u2oh",
+                formRef.current,
+                "FYizqcCGK2NT0fWyT"
+            )
+            .then(
+                (result) => {
+                    setSuccess(true)
+                },
+                (error) => {
+                    setError(true);
+                }
+            );
     };
 
     return (

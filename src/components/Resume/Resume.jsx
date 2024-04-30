@@ -2,26 +2,23 @@ import React, { useEffect, useRef } from 'react'
 import './resume.scss'
 import { Coursera } from '../../icons/icons';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, CSSRulePlugin);
 
+
 const Resume = () => {
-
     const container = useRef();
-
     useGSAP(() => {
 
         let timeline = gsap.timeline({
-
             scrollTrigger: {
                 trigger: ".timeline",
                 start: "0%, 50%",
                 end: "35%, 50%",
                 scrub: 1,
-
             }
 
         });
@@ -29,13 +26,11 @@ const Resume = () => {
         timeline.fromTo(".dot", { backgroundColor: "none", opacity: 0 }, { backgroundColor: "white", opacity: 1, duration: 2, delay: 2 }, 0)
 
         let timeline2 = gsap.timeline({
-
             scrollTrigger: {
                 trigger: ".coursera",
                 start: "50%, 50%",
                 end: "45%, 50%",
                 scrub: 1,
-
             }
 
         });
@@ -44,7 +39,7 @@ const Resume = () => {
 
 
     return (
-        <section id='Resume' className='resume' data-scroll-section>
+        <section id='Resume' ref={container} className='resume' data-scroll-section>
             <div className='resume-container' >
                 <div className='content-width'>
                     {/* Exp / Specialization */}

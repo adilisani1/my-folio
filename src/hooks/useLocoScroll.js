@@ -5,7 +5,6 @@ export default function useLocoScroll(start) {
     useEffect(() => {
         if (!start) return;
         const scrollEl = document.querySelector('#main-content');
-
         const locoScroll = new LocomotiveScroll({
             el: scrollEl,
             smooth: true,
