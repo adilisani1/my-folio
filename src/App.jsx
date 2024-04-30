@@ -8,13 +8,11 @@ import Cursor from './components/cursor/Cursor';
 import Resume from './components/Resume/Resume';
 import Contact from './components/Contact/Contact';
 
-import React, { useRef } from 'react';
-// import useLocoScroll from './hooks/useLocoScroll';
+import React, { useEffect, useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 function App() {
-
   const containerRef = useRef(null);
 
   return (
@@ -29,7 +27,9 @@ function App() {
           }
         }
         containerRef={containerRef}
+        watch={[]}
       >
+
         <main data-scroll-container ref={containerRef}>
           <div id="main-content" >
             <Navbar />
