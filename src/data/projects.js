@@ -13,7 +13,7 @@ export const portfolioData = [
                 alt: 'Ecommerce Project'
             },
             {
-                id: 'p3',
+                id: 'p2',
                 title: 'Weather App',
                 tag: 'general',
                 link: 'https://weather-application-ochre.vercel.app/',
@@ -29,7 +29,7 @@ export const portfolioData = [
         projects: [
 
             {
-                id: 'p2',
+                id: 'p3',
                 title: 'Food App',
                 tag: 'food',
                 link: 'https://foodiemern-front-end.vercel.app/',
@@ -51,6 +51,31 @@ export const portfolioData = [
         ]
     },
 
+    {
+        id: 3,
+        projects: [
 
+            {
+                id: 'p5',
+                title: 'Food App',
+                tag: 'food',
+                link: 'https://foodiemern-front-end.vercel.app/',
+                imgSrc: '/portfolio-one1.jpg',
+                width: 700,
+                height: 1091,
+                alt: 'Food App Project'
+            },
+            {
+                id: 'p6',
+                title: 'More App',
+                tag: 'more',
+                link: '#',
+                imgSrc: '/portfolio-4.jpg',
+                width: 700,
+                height: 850,
+                alt: 'More App Project'
+            }
+        ]
+    },
 
 ];
