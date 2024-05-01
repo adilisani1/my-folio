@@ -57,15 +57,15 @@ const Portfolio = () => {
             data-scroll-section >
             <div className="portfolio-container" >
                 <div className='content-width'>
-                    <div className='portfolio-me'>
-                        <span className="portfolio-icon ri-file-ppt-line"></span>
+                    <div className='portfolio-me' data-scroll data-scroll-speed="0.5">
+                        <span className="portfolio-icon ri-file-ppt-line" ></span>
                         <p className='portfolio-text'>Portfolio</p>
                     </div>
-                    <h2 className='portfolio-title'>My Portfolio</h2>
+                    <h2 className='portfolio-title' data-scroll data-scroll-speed="0.5">My Portfolio</h2>
                     <div className='portfolio-list'>
                         {projects.slice(0, visibleCount).map(project => (
                             <div className='portfolio-wrapper' key={project.id}>
-                                <div className='portfolio-card'>
+                                <div className='portfolio-card' data-scroll data-scroll-speed={project.speed}>
                                     <figure className='card-banner img-holder has-before' style={{ '--width': project.width, '--height': project.height }}>
                                         <img className='img-cover' width={project.width} height={project.height} src={project.imgSrc} alt={project.alt} />
                                     </figure>

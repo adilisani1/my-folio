@@ -96,7 +96,7 @@ const Contact = () => {
                                     <textarea required rows={8} placeholder="Message" name="message" />
                                     <button>Submit</button>
                                     {error && "Error"}
-                                    {success && "Success"}
+                                    {success && "Email Sent Successfully"}
                                 </form>
                             </div>
                         </div>

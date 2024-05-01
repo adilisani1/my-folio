@@ -110,6 +110,8 @@
                     .portfolio-card {
                         position: relative;
                         margin-block-end: 10px;
+                        border-radius: 20px;
+                        overflow: hidden;
 
                         @include large {
                             margin-block-end: 50px;

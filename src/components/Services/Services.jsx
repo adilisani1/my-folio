@@ -2,7 +2,6 @@ import React from 'react'
 import './sevices.scss';
 import { WebDevelopment, UxUiDesign, CmsDevelopment, LogoDesign } from './../../icons/icons';
 
-
 const Services = () => {
     return (
         <section id='Services' className='services' data-scroll-section>
@@ -29,13 +28,8 @@ const Services = () => {
                                     UX-UI <span>Design</span>
                                 </h3>
                                 <UxUiDesign />
-                                {/* <img className='my-services-ico' src='/services/ui-ux-icon.svg' alt="" /> */}
                                 <div>
-                                    <p className='my-services-text'>Welcome to our UI/UX Design Showcase, where
-                                        creativity meets functionality. Dive world where
-                                        user experience is paramount, and portfolio and
-                                        witness the art of user-centric design that elevates
-                                        digital experiences to new heights.</p>
+                                    <p className='my-services-text'>The UI/UX Design Showcase is where form and imagination come together. Discover a world where the user experience is everything. See how user-centric design improves digital experiences by looking through the portfolio.</p>
                                 </div>
 
                             </div>
@@ -45,13 +39,9 @@ const Services = () => {
                                     Web <span> Development</span>
                                 </h3>
                                 <WebDevelopment />
-                                {/* <img className='my-services-ico' src='/services/web-dev-icon.svg' alt="" /> */}
                                 <div>
-                                    <p className='my-services-text'>Welcome to our UI/UX Design Showcase, where
-                                        creativity meets functionality. Dive world where
-                                        user experience is paramount, and portfolio and
-                                        witness the art of user-centric design that elevates
-                                        digital experiences to new heights.</p>
+                                    <p className='my-services-text'>My experience in React JS, Next JS, Redux, Node JS, Express, and MongoDB allows me to provide complete web development solutions that are customised to meet your requirements.</p>
+
                                 </div>
 
                             </div>
@@ -65,13 +55,8 @@ const Services = () => {
                                 </h3>
                                 <CmsDevelopment />
                                 {/* <img className='my-services-ico' src='/services/cms.svg' alt="" /> */}
-                                <div>
-                                    <p className='my-services-text'>Welcome to our UI/UX Design Showcase, where
-                                        creativity meets functionality. Dive world where
-                                        user experience is paramount, and portfolio and
-                                        witness the art of user-centric design that elevates
-                                        digital experiences to new heights.</p>
-                                </div>
+                                <p className='my-services-text'>Using my CMS development expertise, I provide secure and customisable content management systems that optimise your online presence.</p>
+
                             </div>
                             <div className='my-services-items'>
                                 <h3 className='my-services-title'>
@@ -80,11 +65,8 @@ const Services = () => {
                                 <LogoDesign />
                                 {/* <img className='my-services-ico' src='/services/logo-icon.svg' alt="" /> */}
                                 <div>
-                                    <p className='my-services-text'>Welcome to our UI/UX Design Showcase, where
-                                        creativity meets functionality. Dive world where
-                                        user experience is paramount, and portfolio and
-                                        witness the art of user-centric design that elevates
-                                        digital experiences to new heights.</p>
+                                    <p className='my-services-text'>My passion is creating visually attractive and memorable logos that perfectly capture your brand identity. Together, let's design a visually appealing appearance for your company.</p>
+
                                 </div>
 
                             </div>
