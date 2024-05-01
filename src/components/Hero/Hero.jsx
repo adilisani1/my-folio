@@ -72,7 +72,7 @@ const Hero = () => {
     // }
 
     return (
-        <section style={{ willChange: "transform" }} {...(isSmallScreen ? { 'data-scroll-section': true } : {})} id='Home'>
+        <section  {...(isSmallScreen ? { 'data-scroll-section': true } : {})} id='Home'>
             <div className='left-side' >
                 <div className='top-part '>
                     <a className='logo '>
@@ -92,7 +92,7 @@ const Hero = () => {
                     <a className='resume' href='#resume'>Resume</a>
                 </div>
             </div>
-            <div className='wrapper' style={{ willChange: "transform" }} {...(!isSmallScreen ? { 'data-scroll-section': true } : {})} >
+            <div className='wrapper'  {...(!isSmallScreen ? { 'data-scroll-section': true } : {})} >
                 <div className='textContainer' >
                     <div className='content-width'>
                         <h1 >I am Muhammad Adil</h1>
@@ -104,7 +104,7 @@ const Hero = () => {
                         </p>
                         <motion.a
                             className='my-port'
-                            href='#Portfolio'
+                            // href='#Portfolio'
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                             style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>
