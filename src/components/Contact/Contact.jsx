@@ -14,8 +14,8 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                "service_94y20xo",
-                "template_v10u2oh",
+                "service_wlu74gc",
+                "template_ykprq0c",
                 formRef.current,
                 "FYizqcCGK2NT0fWyT"
             )
@@ -93,7 +93,7 @@ const Contact = () => {
                                         <input type="email" required placeholder="Email" name="email" />
                                     </div>
                                     <input type="tel" placeholder="Phone (Optional)" name="phone" />
-                                    <textarea rows={8} placeholder="Message" name="message" />
+                                    <textarea required rows={8} placeholder="Message" name="message" />
                                     <button>Submit</button>
                                     {error && "Error"}
                                     {success && "Success"}

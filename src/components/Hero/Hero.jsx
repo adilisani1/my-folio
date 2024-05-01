@@ -72,7 +72,7 @@ const Hero = () => {
     // }
 
     return (
-        <section  {...(isSmallScreen ? { 'data-scroll-section': true } : {})} id='Home'>
+        <section className='hero-section'  {...(isSmallScreen ? { 'data-scroll-section': true } : {})} id='Home'>
             <div className='left-side' >
                 <div className='top-part '>
                     <a className='logo '>

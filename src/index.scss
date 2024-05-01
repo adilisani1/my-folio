@@ -180,7 +180,11 @@ section {
 }
 
 .hero-section {
-    padding: 200px 0 50px;
+    padding: 120px 0 50px;
+
+    @include xxx-large {
+        padding: 100px 0 50px;
+    }
 
     @include large {
         padding: 0;
@@ -196,27 +200,27 @@ section {
     }
 
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        border-radius: 1948px;
-        background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
-        filter: blur(270px);
-        margin-top: 1%;
-        border-radius: 50%;
-        width: 450px;
-        height: 350px;
-        display: flex;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        flex-shrink: 0;
-        right: 0;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 1;
+    //     border-radius: 1948px;
+    //     background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
+    //     filter: blur(270px);
+    //     margin-top: 1%;
+    //     border-radius: 50%;
+    //     width: 450px;
+    //     height: 350px;
+    //     display: flex;
+    //     justify-content: center;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     flex-shrink: 0;
+    //     right: 0;
 
-    }
+    // }
 }
 
 .about-section {
