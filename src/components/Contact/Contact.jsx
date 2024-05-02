@@ -36,7 +36,6 @@ const Contact = () => {
                 <div className="contact-container" >
                     <div className='content-width'>
                         <div
-                            ref={ref}
                             className="contact">
                             <div className="textContainer" >
                                 <div className='get_in_touch_container'>
@@ -51,36 +50,6 @@ const Contact = () => {
                                 <p className="contact-text">
                                     Feel free to reach out if you have any questions or need help with a project
                                 </p>
-                                {/* <div className="contact-info" >
-                                    <div className="item " >
-                                        <h2>Mail</h2>
-                                        <span>hello@react.dev</span>
-                                    </div>
-                                    <div className="item ">
-                                        <h2>Phone</h2>
-                                        <span>+1 234 5678</span>
-                                    </div>
-                                </div> */}
-
-                                {/* <ul
-                                    className="social-links flex items-center gap-3"
-                                >
-                                    <li>
-                                        <a className=" shadow" href="#">
-                                            <i className="icon ri-whatsapp-line"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="shadow " href="#">
-                                            <i className="icon ri-twitter-line"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="shadow" href="#">
-                                            <i className="icon ri-mail-line"></i>
-                                        </a>
-                                    </li>
-                                </ul> */}
 
                             </div>
 

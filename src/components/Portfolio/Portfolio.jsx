@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './portfolio.scss';
-import { motion } from "framer-motion"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,45 +9,27 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Portfolio = () => {
 
-    const [projects, setProjects] = useState([]);
-    const [visibleCount, setVisibleCount] = useState(4);
+    const [projects, setProjects] = useState(portfolioData);
+    const [pages, setPages] = useState(1);
 
-    const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
+    //Categories
+    const [activeCategory, setActiveCategory] = useState('All');
 
-    const handleMouseMove = (event) => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        const x = event.clientX - rect.left - rect.width / 2;
-        const y = event.clientY - rect.top - rect.height / 2;
-        setHoverStyle({
-            x: x * 0.2,
-            y: y * 0.2
-        });
-    };
+    var filteredCat = ['All', ...new Set(portfolioData.map((project) => project.category))]
 
-    const handleMouseLeave = () => {
-        setHoverStyle({ x: 0, y: 0 });
-    };
-
-    const downArrowVariants = {
-        scrollDown: {
-            y: 10,
-            opacity: 0,
-            transition: {
-                duration: 2,
-                repeat: Infinity
-            }
+    const handleCategoryClick = category => {
+        if (category === 'All') {
+            setProjects(portfolioData);
+        } else {
+            setProjects(portfolioData.filter(project => project.category === category));
         }
-    }
-    useEffect(() => {
-        const allProjects = portfolioData.reduce((acc, group) => {
-            return acc.concat(group.projects);
-        }, []);
-        setProjects(allProjects);
-    }, []);
-
-    const showMoreHandler = () => {
-        setVisibleCount(prevCount => prevCount + 2);
+        setActiveCategory(category);
     };
+
+
+    const handlePageSelect = page => {
+        setPages(page + 1);
+    }
 
     return (
         <section
@@ -57,15 +38,29 @@ const Portfolio = () => {
             data-scroll-section >
             <div className="portfolio-container" >
                 <div className='content-width'>
-                    <div className='portfolio-me' data-scroll data-scroll-speed="0.5">
+                    <div className='portfolio-me' data-scroll data-scroll-speed="0.5" data-scroll-direction='vertical'>
                         <span className="portfolio-icon ri-file-ppt-line" ></span>
                         <p className='portfolio-text'>Portfolio</p>
                     </div>
-                    <h2 className='portfolio-title' data-scroll data-scroll-speed="0.5">My Portfolio</h2>
+                    <h2 className='portfolio-title' data-scroll data-scroll-direction='vertical'>My Portfolio</h2>
+                    <div className="portfolio-category">
+                        <ul>
+                            {filteredCat.map((category) => (
+                                <li key={category.id}>
+                                    <button
+                                        className={activeCategory === category ? 'active' : ''}
+                                        onClick={() => handleCategoryClick(category)}>
+                                        {category.toUpperCase()}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                     <div className='portfolio-list'>
-                        {projects.slice(0, visibleCount).map(project => (
+                        {projects.map(project => (
                             <div className='portfolio-wrapper' key={project.id}>
-                                <div className='portfolio-card' data-scroll data-scroll-speed={project.speed}>
+                                <div className='portfolio-card ' data-scroll data-scroll-direction='vertical'>
                                     <figure className='card-banner img-holder has-before' style={{ '--width': project.width, '--height': project.height }}>
                                         <img className='img-cover' width={project.width} height={project.height} src={project.imgSrc} alt={project.alt} />
                                     </figure>
@@ -82,11 +77,38 @@ const Portfolio = () => {
                                     </a>
                                 </div>
                             </div>
+
                         ))}
 
                     </div>
 
-                    {projects.length > visibleCount && (
+                    <div className='pagination-area'>
+                        <ul className="pagination">
+                            <li className="page-item">
+                                <button className="page-link" >
+                                    01
+                                </button>
+                            </li>
+                            <li className="page-item">
+                                <button className="page-link">
+                                    02
+                                </button>
+                            </li>
+                            <li className="page-item">
+                                <button className="page-link" >
+                                    03
+                                </button>
+                            </li>
+                            <li className="page-item">
+                                <a className="page-link" >
+                                    04
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    {/* 
+                    {projects.length < visibleCount && (
                         <motion.div className='more-project-wrapper'>
                             <motion.a
                                 onClick={showMoreHandler}
@@ -118,12 +140,12 @@ const Portfolio = () => {
                                 </span>
                             </motion.a>
                         </motion.div>
-                    )}
+                    )} */}
 
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 }
 
