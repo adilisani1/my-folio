@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react';
 import './portfolio.scss';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { portfolioData } from '../../data/projects';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = () => {
 
@@ -24,12 +23,16 @@ const Portfolio = () => {
             setProjects(portfolioData.filter(project => project.category === category));
         }
         setActiveCategory(category);
+        setPages(1)
     };
 
 
-    const handlePageSelect = page => {
-        setPages(page + 1);
+    //Pagination
+    const handlePageSelect = selectedPage => {
+        setPages(selectedPage);
     }
+
+    const totalPages = Math.ceil(projects.length / 4);
 
     return (
         <section
@@ -38,15 +41,19 @@ const Portfolio = () => {
             data-scroll-section >
             <div className="portfolio-container" >
                 <div className='content-width'>
+
+                    {/* <!-- Portfolio Title and Subtitle --> */}
                     <div className='portfolio-me' data-scroll data-scroll-speed="0.5" data-scroll-direction='vertical'>
                         <span className="portfolio-icon ri-file-ppt-line" ></span>
                         <p className='portfolio-text'>Portfolio</p>
                     </div>
                     <h2 className='portfolio-title' data-scroll data-scroll-direction='vertical'>My Portfolio</h2>
+
+                    {/* <!-- Categories --> */}
                     <div className="portfolio-category">
                         <ul>
-                            {filteredCat.map((category) => (
-                                <li key={category.id}>
+                            {filteredCat.map((category, index) => (
+                                <li key={index}>
                                     <button
                                         className={activeCategory === category ? 'active' : ''}
                                         onClick={() => handleCategoryClick(category)}>
@@ -56,9 +63,12 @@ const Portfolio = () => {
                             ))}
                         </ul>
                     </div>
+                    {/* <!-- Categories End --> */}
 
+
+                    {/* <!-- Portfolio list --> */}
                     <div className='portfolio-list'>
-                        {projects.map(project => (
+                        {projects.slice(pages * 4 - 4, pages * 4).map(project => (
                             <div className='portfolio-wrapper' key={project.id}>
                                 <div className='portfolio-card ' data-scroll data-scroll-direction='vertical'>
                                     <figure className='card-banner img-holder has-before' style={{ '--width': project.width, '--height': project.height }}>
@@ -79,71 +89,27 @@ const Portfolio = () => {
                             </div>
 
                         ))}
-
                     </div>
+                    {/* <!-- Portfolio list end --> */}
 
+
+                    {/* <!-- Pagination --> */}
                     <div className='pagination-area'>
                         <ul className="pagination">
-                            <li className="page-item">
-                                <button className="page-link" >
-                                    01
-                                </button>
-                            </li>
-                            <li className="page-item">
-                                <button className="page-link">
-                                    02
-                                </button>
-                            </li>
-                            <li className="page-item">
-                                <button className="page-link" >
-                                    03
-                                </button>
-                            </li>
-                            <li className="page-item">
-                                <a className="page-link" >
-                                    04
-                                </a>
-                            </li>
-                        </ul>
 
+                            {[...Array(totalPages).keys()].map((page) => (
+                                <li key={page} className="page-item">
+                                    <button className={`page-link ${pages === page + 1 ? 'active' : ''}`} onClick={() => handlePageSelect(page + 1)}>
+                                        {`0${page + 1}`}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                    {/* 
-                    {projects.length < visibleCount && (
-                        <motion.div className='more-project-wrapper'>
-                            <motion.a
-                                onClick={showMoreHandler}
-                                href="#"
-                                className="more-projects"
-                                onMouseMove={handleMouseMove}
-                                onMouseLeave={handleMouseLeave}
-                                style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out' }}>
-                                <span className="btn-circle-text">
-                                    Explore <br /> All Project
-                                    <motion.span
-                                        className="arrow-down"
-                                        variants={downArrowVariants}
-                                        animate='scrollDown'
-                                    >
-                                        <svg
-                                            version="1.1"
-                                            viewBox="0 0 330 330"
-                                            xmlSpace="preserve"
-                                        >
-                                            <path
-                                                d="M154.394,325.606C157.322,328.535,161.161,330,165,330s7.678-1.465,10.607-4.394l75-75
-	c5.858-5.857,5.858-15.355,0-21.213c-5.858-5.857-15.356-5.857-21.213,0L180,278.787V15c0-8.284-6.716-15-15-15
-	c-8.284,0-15,6.716-15,15v263.787l-49.394-49.394c-5.858-5.857-15.355-5.857-21.213,0c-5.858,5.857-5.858,15.355,0,21.213
-	L154.394,325.606z"
-                                            />
-                                        </svg>
-                                    </motion.span>
-                                </span>
-                            </motion.a>
-                        </motion.div>
-                    )} */}
+                    {/* <!-- Pagination end --> */}
+
 
                 </div>
-
             </div>
         </section >
     );

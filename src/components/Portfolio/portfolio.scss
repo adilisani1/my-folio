@@ -328,6 +328,12 @@
                                 color: #fff;
                             }
 
+                            &.active {
+                                background: #8750f7;
+                                border: 2px solid #8750f7;
+                                color: #fff;
+                            }
+
                         }
                     }
                 }

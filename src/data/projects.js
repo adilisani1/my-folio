@@ -58,5 +58,18 @@ export const portfolioData = [
         height: 800,
         alt: 'More App Project',
         speed: 0.6
+    },
+
+    {
+        id: 6,
+        title: 'Poster',
+        tag: 'more',
+        category: 'logo',
+        link: '#',
+        imgSrc: 'https://cdn.pixabay.com/photo/2020/08/26/14/29/technology-5519649_1280.jpg',
+        width: 650,
+        height: 800,
+        alt: 'More App Project',
+        speed: 0.6
     }
 ];
