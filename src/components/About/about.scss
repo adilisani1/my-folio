@@ -15,15 +15,12 @@
     }
 
     .content-width {
-      max-width: 850px;
+      max-width: 800px;
       width: 100%;
       margin-left: auto;
 
-      @include xx-large {
-        max-width: 800px;
-      }
-      @include x-large {
-        max-width: 770px;
+      @include large {
+        max-width: 100%;
       }
 
       .about-wrapper {
@@ -202,8 +199,12 @@
             grid-template-columns: repeat(4, minmax(0, 1fr));
             justify-items: center;
             align-items: center;
-            margin-bottom: 5rem;
+            // margin-bottom: 5rem;
             gap: 7px;
+
+            @include tablet {
+              margin-bottom: 0rem;
+            }
 
             @include sm-mobile {
               grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -171,18 +171,18 @@ ul {
 #main-content {
   padding: 0;
   position: relative;
+  overflow: hidden;
 }
 
 section {
   padding: 100px 0;
-
   @include xxx-large {
-    padding: 45px 0;
-  }
-
-  @include mobile {
     padding: 50px 0;
   }
+
+  // @include mobile {
+  //   padding: 50px 0;
+  // }
 }
 
 // .hero-section {
