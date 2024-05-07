@@ -21,6 +21,10 @@
     padding: 30px;
   }
 
+  @include x-large {
+    max-width: 320px;
+  }
+
   &::before {
     content: "";
     position: absolute;
