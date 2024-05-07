@@ -22,6 +22,9 @@
       @include xx-large {
         max-width: 800px;
       }
+      @include x-large {
+        max-width: 770px;
+      }
 
       .about-wrapper {
         height: 100%;
