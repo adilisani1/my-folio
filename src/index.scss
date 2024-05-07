@@ -1,295 +1,294 @@
 :root {
-    --smokey-black: hsl(0, 0%, 6%);
-    --ff-recoleta: "Recoleta", serif;
-    --transition-2: 0.5s ease;
-    --white: #fff;
-    --gradient-1: linear-gradient(180deg, transparent, var(--smokey-black));
-    --gradient-2: linear-gradient(180deg, var(--smokey-black) 25%, hsla(0, 0%, 0%, 0.6) 80%);
+  --smokey-black: hsl(0, 0%, 6%);
+  --ff-recoleta: "Recoleta", serif;
+  --transition-2: 0.5s ease;
+  --white: #fff;
+  --gradient-1: linear-gradient(180deg, transparent, var(--smokey-black));
+  --gradient-2: linear-gradient(
+    180deg,
+    var(--smokey-black) 25%,
+    hsla(0, 0%, 0%, 0.6) 80%
+  );
 }
 
 @mixin font-face($name, $src, $weight) {
-    @font-face {
-        font-family: $name;
-        src: url($src);
-        font-weight: $weight;
-    }
+  @font-face {
+    font-family: $name;
+    src: url($src);
+    font-weight: $weight;
+  }
 }
 
 //Recoleta Font
 @font-face {
-    font-family: 'Recoleta';
-    src: url('/font/recoleta/Recoleta-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Recoleta";
+  src: url("/font/recoleta/Recoleta-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Recoleta';
-    src: url('/font/recoleta/Recoleta-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Recoleta";
+  src: url("/font/recoleta/Recoleta-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 // Mont Font
 @font-face {
-    font-family: 'Mont-Light';
-    src: url('/font/mont/Mont-Light.woff2') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Mont-Light";
+  src: url("/font/mont/Mont-Light.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Mont-Regular';
-    src: url('/font/mont/Mont-Regular.woff2') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Mont-Regular";
+  src: url("/font/mont/Mont-Regular.woff2") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Mont-Bold';
-    src: url('/font/mont/Mont-Bold.woff2') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Mont-Bold";
+  src: url("/font/mont/Mont-Bold.woff2") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Mont-Regular", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mont-Regular", sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 html.has-scroll-smooth {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 html.has-scroll-dragging {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .has-scroll-smooth body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .has-scroll-smooth [data-scroll-container] {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 html {
-    scroll-behavior: smooth;
-
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0D0A0F;
-    color: rgb(211, 211, 211);
-    // overflow: hidden;
+  background-color: #0d0a0f;
+  color: rgb(211, 211, 211);
+  // overflow: hidden;
+  // overflow-x: hidden;
+  height: 100vh;
 }
 
 :focus-visible {
-    outline-offset: 4px;
+  outline-offset: 4px;
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: hsl(0, 0%, 89%);
+  background-color: hsl(0, 0%, 89%);
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-
 @mixin xxx-large {
-    @media (max-width: 1555px) {
-        @content;
-    }
+  @media (max-width: 1555px) {
+    @content;
+  }
 }
 
 @mixin xx-large {
-    @media (max-width: 1400px) {
-        @content;
-    }
+  @media (max-width: 1400px) {
+    @content;
+  }
 }
 
 @mixin x-large {
-    @media (max-width: 1280px) {
-        @content;
-    }
+  @media (max-width: 1280px) {
+    @content;
+  }
 }
 
 @mixin large {
-    @media (max-width: 1220px) {
-        @content;
-    }
+  @media (max-width: 1220px) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (max-width: 1024px) {
-        @content;
-    }
+  @media (max-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin mobile {
-    @media (max-width: 768px) {
-        @content;
-    }
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin sm-mobile {
-    @media (max-width: 640px) {
-        @content;
-    }
+  @media (max-width: 640px) {
+    @content;
+  }
 }
 
 #main-content {
-    padding: 0;
-    position: relative;
+  padding: 0;
+  position: relative;
 }
 
 section {
-    padding: 100px 0;
+  padding: 100px 0;
 
-    @include mobile {
-        padding: 50px 0;
+  @include xxx-large {
+    padding: 45px 0;
+  }
 
-    }
+  @include mobile {
+    padding: 50px 0;
+  }
 }
 
-.hero-section {
-    padding: 120px 0 50px;
+// .hero-section {
+//   padding: 125px 0 120px;
+//   position: relative;
+//   overflow: hidden;
+//   @include xxx-large {
+//     padding: 50px 0 50px;
+//   }
 
-    @include xxx-large {
-        padding: 100px 0 50px;
-    }
+//   @include large {
+//     padding: 0;
+//   }
 
-    @include large {
-        padding: 0;
-    }
+//   @include tablet {
+//     padding: 2px 0 20px;
+//   }
 
-    @include tablet {
-        padding: 2px 0 20px;
-    }
+//   @include mobile {
+//     padding: 0 0 20px;
+//   }
 
-    @include mobile {
-        padding: 0 0 20px;
+// &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: 1;
+//     border-radius: 1948px;
+//     background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
+//     filter: blur(270px);
+//     margin-top: 1%;
+//     border-radius: 50%;
+//     width: 450px;
+//     height: 350px;
+//     display: flex;
+//     justify-content: center;
+//     margin-left: auto;
+//     margin-right: auto;
+//     flex-shrink: 0;
+//     right: 0;
 
-    }
+// }
+// }
 
+// .about-section {
+//   padding-top: 100px;
+//   padding-bottom: 80px;
 
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     z-index: 1;
-    //     border-radius: 1948px;
-    //     background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
-    //     filter: blur(270px);
-    //     margin-top: 1%;
-    //     border-radius: 50%;
-    //     width: 450px;
-    //     height: 350px;
-    //     display: flex;
-    //     justify-content: center;
-    //     margin-left: auto;
-    //     margin-right: auto;
-    //     flex-shrink: 0;
-    //     right: 0;
+//   @include large {
+//     padding-top: 80px;
+//     padding-bottom: 50px;
+//   }
 
-    // }
-}
+//   @include mobile {
+//     padding-top: 70px;
+//     padding-bottom: 20px;
+//   }
+// }
 
-.about-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+// .services-section {
+//   padding-top: 120px;
+//   padding-bottom: 120px;
 
+//   @include large {
+//     padding-top: 80px;
+//     padding-bottom: 10px;
+//   }
 
-    @include large {
-        padding-top: 80px;
-        padding-bottom: 50px;
-    }
+//   @include mobile {
+//     padding-top: 20px;
+//     padding-bottom: 0px;
+//   }
+// }
 
-    @include mobile {
-        padding-top: 70px;
-        padding-bottom: 20px;
-    }
-}
+// .resume-section {
+//   padding-top: 140px;
+//   padding-bottom: 140px;
 
-.services-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+//   @include large {
+//     padding-top: 80px;
+//     padding-bottom: 10px;
+//   }
 
+//   @include mobile {
+//     padding-top: 20px;
+//     padding-bottom: 0px;
+//   }
+// }
 
-    @include large {
-        padding-top: 80px;
-        padding-bottom: 10px;
-    }
+// .portfolio-section {
+//   padding-block: 80px;
+// }
 
-    @include mobile {
-        padding-top: 20px;
-        padding-bottom: 0px;
-    }
-}
+// .contact-section {
+//   padding-top: 120px;
+//   padding-bottom: 120px;
 
-.resume-section {
-    padding-top: 140px;
-    padding-bottom: 140px;
+//   @include large {
+//     padding-top: 80px;
+//   }
 
-    @include large {
-        padding-top: 80px;
-        padding-bottom: 10px;
-    }
-
-    @include mobile {
-        padding-top: 20px;
-        padding-bottom: 0px;
-    }
-}
-
-.portfolio-section {
-    padding-block: 80px;
-
-}
-
-.contact-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
-
-    @include large {
-        padding-top: 80px;
-
-    }
-
-    @include mobile {
-        padding-top: 10px;
-
-    }
-}
+//   @include mobile {
+//     padding-top: 10px;
+//   }
+// }
 
 // section {
 //     padding: 68px 0;
@@ -305,17 +304,17 @@ section {
 //     }
 // }
 
-//theme
-.theme {
-    transition: all 0.5s ease;
-}
+// //theme
+// .theme {
+//   transition: all 0.5s ease;
+// }
 
-.light {
-    background-color: #ffffff;
-    color: rgb(42, 42, 42);
-}
+// .light {
+//   background-color: #ffffff;
+//   color: rgb(42, 42, 42);
+// }
 
-.dark {
-    background-color: #0D0A0F;
-    color: rgb(211, 211, 211);
-}
+// .dark {
+//   background-color: #0d0a0f;
+//   color: rgb(211, 211, 211);
+// }

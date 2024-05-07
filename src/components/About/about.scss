@@ -1,326 +1,295 @@
 @import "../../index.scss";
 
 .about {
-    position: relative;
-    // overflow: hidden;
-    z-index: 1;
-
-    .about-container {
-        max-width: 1150px;
-        padding: 0 15px;
-        margin: auto;
-
-        @include large {
-            max-width: 870px;
-        }
-
-        .content-width {
-            max-width: 850px;
-            width: 100%;
-            margin-left: auto;
-
-            @include xx-large {
-                max-width: 800px;
-
-            }
-
-
-            .about-wrapper {
-                height: 100%;
-                gap: 30px;
-                width: 100%;
-                // grid-template-columns: 1fr 1fr;
-                // flex-wrap: wrap;
-
-
-                @include mobile {
-                    // padding-top: 10px;
-                    align-items: center;
-                    text-align: center;
-                    // gap: 10px;
-                    // grid-template-columns: 1fr;
-                }
-
-                @include tablet {
-                    // grid-template-columns: 1fr;
-                }
-
-                .about-text-container {
-                    // flex: 1;
-                    width: 80%;
-
-                    flex: auto;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-
-                    @include mobile {
-                        width: 100%;
-                    }
-
-                    .about-me {
-                        position: relative;
-                        display: flex;
-                        gap: 8px;
-                        justify-content: center;
-                        align-items: center;
-                        border: 1px solid #fff;
-                        // max-width: 200px;
-                        padding: 12px 30px;
-                        border-radius: 50px;
-                        -webkit-transition: all 0.5s ease;
-                        -o-transition: all 0.5s ease;
-                        transition: all 0.5s ease;
-                        margin-bottom: 25px;
-
-
-
-
-                        &:hover {
-                            border: 1px solid #8750f7;
-                            color: #fff;
-
-                            .about-icon {
-                                color: #ffffff;
-                                font-size: 17px;
-                            }
-                        }
-
-                        .about-me-title {
-                            // color: #FFF;
-                            font-family: var(--ff-recoleta);
-                            font-size: 17px;
-                            line-height: normal;
-                            text-transform: uppercase;
-
-                            @include mobile {
-                                font-size: 18px;
-                            }
-                        }
-
-                        .about-icon {
-                            color: #8750f7;
-
-                            @include mobile {
-                                font-size: 17px;
-                            }
-
-                        }
-
-
-                        .border-bottom {
-                            position: absolute;
-                            left: 0;
-                            bottom: -8px;
-                            width: 70px;
-
-                            @include mobile {
-                                right: 0;
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-
-                    .about-text-wrapper {
-                        margin-bottom: 25px;
-                        text-align: left;
-
-                        .about-text {
-                            // color: #FFF;
-                            line-height: 30px;
-                            font-family: "Mont-Light", sans-serif;
-                            font-size: 17px;
-                            font-weight: 400;
-                            text-transform: uppercase;
-                            padding: 0;
-                            margin-top: 5px;
-                            margin-bottom: 20px;
-
-
-                            @include mobile {
-                                font-size: 13px;
-                                margin: 15px 0;
-
-                            }
-                        }
-
-                    }
-
-                }
-
-                .skills-wrapper {
-
-                    // flex: 0 0 auto;
-                    // width: 60%;
-                    .skills-text-container {
-
-                        flex: auto;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-
-                        .skills-me {
-                            position: relative;
-                            margin-bottom: 20px;
-                            display: flex;
-                            gap: 8px;
-                            font-size: 20px;
-                            border: 1px solid #fff;
-                            padding: 12px 30px;
-                            align-items: center;
-                            border-radius: 50px;
-                            -webkit-transition: all 0.5s ease;
-                            -o-transition: all 0.5s ease;
-                            transition: all 0.5s ease;
-
-
-                            &:hover {
-                                border: 1px solid #8750f7;
-                                color: #fff;
-
-                                .skills-icon {
-                                    color: #ffffff;
-                                }
-                            }
-
-                            .skill-title {
-                                font-family: var(--ff-recoleta);
-                                font-size: 17px;
-                                line-height: normal;
-                                text-transform: uppercase;
-
-                                @include mobile {
-                                    font-size: 18px;
-                                }
-                            }
-
-                            .skills-icon {
-                                color: #8750f7;
-                                font-size: 17px;
-
-                                @include mobile {
-                                    font-size: 17px;
-                                }
-                            }
-                        }
-                    }
-
-                    @include mobile {
-                        // width: 100%;
-
-                    }
-
-                    .skills {
-                        display: grid;
-                        grid-template-columns: repeat(4, minmax(0, 1fr));
-                        justify-items: center;
-                        align-items: center;
-                        margin-bottom: 5rem;
-                        gap: 7px;
-
-                        @include sm-mobile {
-                            grid-template-columns: repeat(2, minmax(0, 1fr));
-                            margin-bottom: 0rem;
-                        }
-
-                        .items {
-                            border-radius: 10px;
-                            position: relative;
-                            margin-bottom: 12px;
-                            max-width: 180px;
-                            width: 100%;
-                            text-align: center;
-                            margin-right: 8px;
-
-
-
-                            .item-data {
-                                // display: flex;
-                                // flex-direction: column;
-                                align-items: center;
-                                margin-bottom: 20px;
-                                border-radius: 25px;
-                                padding: 30px 15px 30px;
-                                background: #140c1c;
-                                border: 1px solid transparent;
-                                margin-bottom: 15px;
-                                -webkit-transition: 0.6s;
-                                -o-transition: 0.6s;
-                                transition: 0.6s;
-
-                                &:hover {
-                                    background: #2a1454;
-                                    border: 1px solid #8750f7;
-
-                                    .icon-img-40 {
-                                        filter: grayscale(0);
-                                        -webkit-filter: grayscale(0);
-                                        -webkit-transform: scale(1.1);
-                                        -ms-transform: scale(1.1);
-                                        transform: scale(1.1);
-                                    }
-                                }
-
-                                .icon-img-40 {
-                                    max-width: 60px;
-                                    width: 100%;
-                                    margin: 0 auto 20px;
-                                    filter: grayscale(90%);
-                                    -webkit-filter: grayscale(90%);
-
-                                    img {
-                                        max-width: 100%;
-                                        height: auto;
-
-                                        -webkit-transition: 0.3s;
-                                        -o-transition: 0.3s;
-                                        transition: 0.3s;
-
-
-                                    }
-                                }
-
-                                .mr-30 {
-                                    margin-right: 10px;
-                                }
-
-                                .fz-18 {
-                                    font-size: 15px;
-                                }
-                            }
-
-                            .skill-progress {
-                                height: 3px;
-                                // background-color: rgba(255, 255, 255, 0.2);
-                                position: relative;
-
-                                .progress {
-                                    position: absolute;
-                                    height: 100%;
-                                    // width: 240px !important;
-                                    top: 0;
-                                    left: 0;
-                                    // background-color: #fff;
-                                    -webkit-transition: all 1.5s;
-                                    -o-transition: all 1.5s;
-                                    transition: all 1.5s;
-                                }
-
-
-                            }
-
-
-                        }
-
-                    }
-                }
-            }
-
-
-
-        }
-
+  position: relative;
+  // overflow: hidden;
+  z-index: 1;
+
+  .about-container {
+    max-width: 1150px;
+    padding: 0 15px;
+    margin: auto;
+
+    @include large {
+      max-width: 870px;
     }
 
+    .content-width {
+      max-width: 850px;
+      width: 100%;
+      margin-left: auto;
 
+      @include xx-large {
+        max-width: 800px;
+      }
+
+      .about-wrapper {
+        height: 100%;
+        gap: 30px;
+        width: 100%;
+        // grid-template-columns: 1fr 1fr;
+        // flex-wrap: wrap;
+
+        @include mobile {
+          // padding-top: 10px;
+          align-items: center;
+          text-align: center;
+          // gap: 10px;
+          // grid-template-columns: 1fr;
+        }
+
+        @include tablet {
+          // grid-template-columns: 1fr;
+        }
+
+        .about-text-container {
+          // flex: 1;
+          width: 80%;
+
+          flex: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          @include mobile {
+            width: 100%;
+          }
+
+          .about-me {
+            position: relative;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+            // max-width: 200px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            margin-bottom: 45px;
+
+            &:hover {
+              border: 1px solid #8750f7;
+              color: #fff;
+
+              .about-icon {
+                color: #ffffff;
+                font-size: 17px;
+              }
+            }
+
+            .about-me-title {
+              // color: #FFF;
+              font-family: var(--ff-recoleta);
+              font-size: 16px;
+              line-height: normal;
+              text-transform: uppercase;
+
+              // @include mobile {
+              //     font-size: 18px;
+              // }
+            }
+
+            .about-icon {
+              color: #8750f7;
+
+              @include mobile {
+                font-size: 17px;
+              }
+            }
+
+            .border-bottom {
+              position: absolute;
+              left: 0;
+              bottom: -8px;
+              width: 70px;
+
+              @include mobile {
+                right: 0;
+                margin: 0 auto;
+              }
+            }
+          }
+
+          .about-text-wrapper {
+            margin-bottom: 25px;
+            text-align: left;
+
+            .about-text {
+              // color: #FFF;
+              line-height: 30px;
+              font-family: "Mont-Light", sans-serif;
+              font-size: 17px;
+              font-weight: 400;
+              text-transform: uppercase;
+              padding: 0;
+              margin-top: 5px;
+              margin-bottom: 20px;
+
+              @include mobile {
+                font-size: 13px;
+                margin: 15px 0;
+              }
+            }
+          }
+        }
+
+        .skills-wrapper {
+          // flex: 0 0 auto;
+          // width: 60%;
+          .skills-text-container {
+            flex: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .skills-me {
+              position: relative;
+              margin-bottom: 40px;
+              display: flex;
+              gap: 8px;
+              font-size: 20px;
+              border: 1px solid #fff;
+              padding: 12px 30px;
+              align-items: center;
+              border-radius: 50px;
+              -webkit-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+
+              &:hover {
+                border: 1px solid #8750f7;
+                color: #fff;
+
+                .skills-icon {
+                  color: #ffffff;
+                }
+              }
+
+              .skill-title {
+                font-family: var(--ff-recoleta);
+                font-size: 16px;
+                line-height: normal;
+                text-transform: uppercase;
+
+                // @include mobile {
+                //   font-size: 18px;
+                // }
+              }
+
+              .skills-icon {
+                color: #8750f7;
+                font-size: 17px;
+
+                @include mobile {
+                  font-size: 17px;
+                }
+              }
+            }
+          }
+
+          @include mobile {
+            // width: 100%;
+          }
+
+          .skills {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            justify-items: center;
+            align-items: center;
+            margin-bottom: 5rem;
+            gap: 7px;
+
+            @include sm-mobile {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              margin-bottom: 0rem;
+            }
+
+            .items {
+              border-radius: 10px;
+              position: relative;
+              margin-bottom: 12px;
+              max-width: 180px;
+              width: 100%;
+              text-align: center;
+              margin-right: 8px;
+
+              .item-data {
+                // display: flex;
+                // flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+                border-radius: 25px;
+                padding: 30px 15px 30px;
+                background: #140c1c;
+                border: 1px solid transparent;
+                margin-bottom: 15px;
+                -webkit-transition: 0.6s;
+                -o-transition: 0.6s;
+                transition: 0.6s;
+
+                &:hover {
+                  background: #2a1454;
+                  border: 1px solid #8750f7;
+
+                  .icon-img-40 {
+                    filter: grayscale(0);
+                    -webkit-filter: grayscale(0);
+                    -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+                  }
+                }
+
+                .icon-img-40 {
+                  max-width: 60px;
+                  width: 100%;
+                  margin: 0 auto 20px;
+                  filter: grayscale(90%);
+                  -webkit-filter: grayscale(90%);
+
+                  img {
+                    max-width: 100%;
+                    height: auto;
+
+                    -webkit-transition: 0.3s;
+                    -o-transition: 0.3s;
+                    transition: 0.3s;
+                  }
+                }
+
+                .mr-30 {
+                  margin-right: 10px;
+                }
+
+                .fz-18 {
+                  font-size: 15px;
+                }
+              }
+
+              .skill-progress {
+                height: 3px;
+                // background-color: rgba(255, 255, 255, 0.2);
+                position: relative;
+
+                .progress {
+                  position: absolute;
+                  height: 100%;
+                  // width: 240px !important;
+                  top: 0;
+                  left: 0;
+                  // background-color: #fff;
+                  -webkit-transition: all 1.5s;
+                  -o-transition: all 1.5s;
+                  transition: all 1.5s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

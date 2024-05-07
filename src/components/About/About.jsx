@@ -3,53 +3,15 @@ import './about.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+
 const About = () => {
     const container = useRef();
 
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        // var tl = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".about-text-container",
-        //         start: "top bottom",
-        //         end: "top center",
-        //         scrub: 4,
-        //     }
-        // });
-        // tl.fromTo(".about-text-container", {
-        //     y: 250,
-        //     opacity: 0
-        // }, {
-        //     y: 0,
-        //     opacity: 1,
-        //     duration: 2.5,
-        //     ease: "power1.out"
-        // });
-        // tl.fromTo(".skills-text-container", {
-        //     y: 250,
-        //     opacity: 0
-        // }, {
-        //     y: 0,
-        //     opacity: 1,
-        //     duration: 2.5,
-        //     ease: "power1.out"
-        // });
 
-        // tl.fromTo(".skills .items", {
-        //     y: 250,
-        //     opacity: 0,
-        // }, {
-        //     y: 0,
-        //     opacity: 1,
-        //     duration: 2.5,
-        //     stagger: 0.5,
-        //     ease: "power1.out"
-        // });
-    }, { scope: container });
 
 
     return (
-        <section id='About' className='about' ref={container} data-scroll-section>
+        <section id='About' className='about' data-scroll-section>
             <div className='about-container' >
                 <div className='content-width'>
                     <div className='about-wrapper'>

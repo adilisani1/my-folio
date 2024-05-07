@@ -12,7 +12,7 @@ gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
     const { scroll } = useLocomotiveScroll();
-    const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 1024px)").matches);
+    // const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 1024px)").matches);
     const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
 
     const portFolioImg = useRef();
@@ -41,19 +41,19 @@ const Hero = () => {
         });
     }, {});
 
-    useEffect(() => {
-        const mediaQuery = window.matchMedia("(max-width: 1024px)");
-        const handleResize = () => {
-            setIsSmallScreen(mediaQuery.matches);
-        };
+    // useEffect(() => {
+    //     const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    //     const handleResize = () => {
+    //         setIsSmallScreen(mediaQuery.matches);
+    //     };
 
-        mediaQuery.addListener(handleResize);
-        handleResize();
+    //     mediaQuery.addListener(handleResize);
+    //     handleResize();
 
-        return () => {
-            mediaQuery.removeListener(handleResize);
-        };
-    }, []);
+    //     return () => {
+    //         mediaQuery.removeListener(handleResize);
+    //     };
+    // }, []);
 
     //Handle ScrollPortfolio;
 
@@ -72,7 +72,8 @@ const Hero = () => {
     // }
 
     return (
-        <section className='hero-section'  {...(isSmallScreen ? { 'data-scroll-section': true } : {})} id='Home'>
+
+        <>
             <div className='left-side' >
                 <div className='top-part '>
                     <a className='logo '>
@@ -92,30 +93,47 @@ const Hero = () => {
                     <a className='resume' href='#resume'>Resume</a>
                 </div>
             </div>
-            <div className='wrapper'  {...(!isSmallScreen ? { 'data-scroll-section': true } : {})} >
-                <div className='textContainer' >
-                    <div className='content-width'>
-                        <h1 >I am Muhammad Adil</h1>
-                        <h3> Frontend Engineer (ReactJS) - Gamer -<br />DeveloperOnWheels ♿ </h3>
 
-                        <p>Where Passion Meets Precision: Unleashing Innovation from a Wheelchair,
-                            Crafting Seamless Digital Experiences with React JS, Redux & WordPress,
-                            Defying Gravity, Redefining Web Development.
-                        </p>
-                        <motion.a
-                            className='my-port'
-                            // href='#Portfolio'
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                            style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>
-                            <i className="mouse-scroll ri-arrow-down-s-line"></i>
-                            <img className='' ref={portFolioImg} src='/my-portfolio-img.png' alt="Profile Picture" />
-                        </motion.a>
+
+            <section className='hero-section' data-scroll-section id='Home'>
+
+                <div className='wrapper' >
+                    <div className='textContainer' >
+                        <div className='content-width'>
+
+                            <div className='hero-container'>
+                                <div className='hero-me'>
+                                    <span className="hero-icon ri-passport-line"></span>
+                                    <h4 className='hero-me-title'>
+                                        Introduction
+                                    </h4>
+                                </div>
+                                <h1 >I am Muhammad Adil</h1>
+                                <h3> Frontend Engineer (ReactJS) - Gamer -<br />DeveloperOnWheels ♿ </h3>
+
+                                <p>Where Passion Meets Precision: Unleashing Innovation from a Wheelchair,
+                                    Crafting Seamless Digital Experiences with React JS, Redux & WordPress,
+                                    Defying Gravity, Redefining Web Development.
+                                </p>
+                            </div>
+
+
+                            <motion.a
+                                className='my-port'
+                                // href='#Portfolio'
+                                onMouseMove={handleMouseMove}
+                                onMouseLeave={handleMouseLeave}
+                                style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>
+                                <i className="mouse-scroll ri-arrow-down-s-line"></i>
+                                <img className='' ref={portFolioImg} src='/my-portfolio-img.png' alt="Profile Picture" />
+                            </motion.a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
+        </>
+
     )
 }
 

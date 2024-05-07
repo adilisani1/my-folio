@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './portfolio.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,6 +10,7 @@ const Portfolio = () => {
 
     const [projects, setProjects] = useState(portfolioData);
     const [pages, setPages] = useState(1);
+    const portfolioRef = useRef(null);
 
     //Categories
     const [activeCategory, setActiveCategory] = useState('All');
@@ -29,8 +30,10 @@ const Portfolio = () => {
 
     //Pagination
     const handlePageSelect = selectedPage => {
+
         setPages(selectedPage);
-    }
+
+    };
 
     const totalPages = Math.ceil(projects.length / 4);
 
@@ -43,7 +46,7 @@ const Portfolio = () => {
                 <div className='content-width'>
 
                     {/* <!-- Portfolio Title and Subtitle --> */}
-                    <div className='portfolio-me' data-scroll data-scroll-speed="0.5" data-scroll-direction='vertical'>
+                    <div className='portfolio-me'>
                         <span className="portfolio-icon ri-file-ppt-line" ></span>
                         <p className='portfolio-text'>Portfolio</p>
                     </div>
@@ -67,7 +70,7 @@ const Portfolio = () => {
 
 
                     {/* <!-- Portfolio list --> */}
-                    <div className='portfolio-list'>
+                    <div className='portfolio-list' ref={portfolioRef}>
                         {projects.slice(pages * 4 - 4, pages * 4).map(project => (
                             <div className='portfolio-wrapper' key={project.id}>
                                 <div className='portfolio-card ' data-scroll data-scroll-direction='vertical'>
