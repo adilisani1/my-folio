@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './navbar.scss';
 import Sidebar from '../sidebar/Sidebar';
 
 const Navbar = () => {
     const [openSide, setOpenSide] = useState(false);
+    const sidebarRef = useRef(null);
+
     const handleOpen = () => {
         setOpenSide((prev) => !prev)
     }
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (openSide && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+                setOpenSide(false)
+            }
+        }
+
+        document.body.addEventListener('click', handleClickOutside, true)
+
+        return () => {
+            document.body.removeEventListener('click', handleClickOutside, false)
+        }
+
+    }, [openSide])
+
     return (
         <div className={`navbar `} >
             <div className={`nav-container`} >
-                <Sidebar
-                    openSide={openSide}
-                    setOpenSide={setOpenSide} />
+                <div ref={sidebarRef}>
+                    <Sidebar
+                        openSide={openSide}
+                        setOpenSide={setOpenSide} />
+                </div>
                 <div
                     className='openButton'
                     onClick={handleOpen}>

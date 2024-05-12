@@ -14,6 +14,8 @@ const Sidebar = ({ openSide, setOpenSide }) => {
         setOpenSide(false);
     }
 
+
+
     useEffect(() => {
         if (bgRef.current) {
             if (openSide) {
@@ -33,6 +35,7 @@ const Sidebar = ({ openSide, setOpenSide }) => {
             }
         }
     }, [openSide]);
+
 
     return (
         <>
