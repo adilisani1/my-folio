@@ -1,18 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { motion } from "framer-motion"
 import './hero.scss';
 import { Social } from '../Navbar/social/Social';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
+
+import LocomotiveScroll from 'locomotive-scroll';
+import 'locomotive-scroll/src/locomotive-scroll.scss';
 
 gsap.registerPlugin(useGSAP);
 
-
-
 const Hero = () => {
-    const { scroll } = useLocomotiveScroll();
-    // const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 1024px)").matches);
+
+
+
     const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
 
     const portFolioImg = useRef();
@@ -40,36 +41,6 @@ const Hero = () => {
             ease: 'linear',
         });
     }, {});
-
-    // useEffect(() => {
-    //     const mediaQuery = window.matchMedia("(max-width: 1024px)");
-    //     const handleResize = () => {
-    //         setIsSmallScreen(mediaQuery.matches);
-    //     };
-
-    //     mediaQuery.addListener(handleResize);
-    //     handleResize();
-
-    //     return () => {
-    //         mediaQuery.removeListener(handleResize);
-    //     };
-    // }, []);
-
-    //Handle ScrollPortfolio;
-
-    // const handleNavigatePortfolio = (event, item) => {
-    //     event.preventDefault();
-
-    //     const sectionPortfolio = document.querySelector(`#${item}`);
-
-    //     if (sectionPortfolio && scroll) {
-    //         scroll.scrollTo(sectionPortfolio, {
-    //             offset: '-100',
-    //             duration: 800,
-    //             easing: [0.25, 0.0, 0.35, 1.0]
-    //         });
-    //     }
-    // }
 
     return (
 
@@ -120,7 +91,6 @@ const Hero = () => {
 
                             <motion.a
                                 className='my-port'
-                                // href='#Portfolio'
                                 onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
                                 style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>

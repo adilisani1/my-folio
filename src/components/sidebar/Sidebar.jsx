@@ -5,20 +5,18 @@ import ToggleButton from './toggleButton/ToggleButton';
 import gsap from 'gsap';
 import Links from './Links/Links';
 
+const Sidebar = ({ openSide, setOpenSide }) => {
 
-
-const Sidebar = () => {
-
-    const [openNav, setOpenNav] = useState(false);
+    // const [openNav, setOpenNav] = useState(false);
     const bgRef = useRef(null);
 
-    const toggleNav = () => {
-        setOpenNav((prev) => !prev);
+    const closeSide = () => {
+        setOpenSide(false);
     }
 
     useEffect(() => {
         if (bgRef.current) {
-            if (openNav) {
+            if (openSide) {
                 gsap.to(bgRef.current, {
                     x: 0,
                     autoAlpha: 1,
@@ -34,16 +32,23 @@ const Sidebar = () => {
                 });
             }
         }
-    }, [openNav]);
+    }, [openSide]);
 
     return (
         <>
+
             <div>
-                <div ref={bgRef} className={`bg ${!openNav ? 'hidden' : ''}`} key="nav-menu">
+                <div ref={bgRef} className={`bg ${!openSide ? 'hidden' : ''}`} key="nav-menu">
                     <Links />
+                    <div className='closeButton' onClick={closeSide}>
+                        <div className='burger'>
+                            <div className='burgerActive'></div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <ToggleButton openNav={openNav} toggleNav={toggleNav} />
+
         </>
     );
 }
