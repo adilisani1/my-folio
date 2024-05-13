@@ -8,15 +8,12 @@ import Cursor from './components/cursor/Cursor';
 import Resume from './components/Resume/Resume';
 import Contact from './components/Contact/Contact';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css';
-import { useState } from 'react';
 
 function App() {
   const containerRef = useRef(null);
-  // const [scrollInstance, setScrollInstance] = useState(null);
-
 
   return (
     <>
@@ -41,7 +38,7 @@ function App() {
             <About />
             <Services />
             <Resume />
-            <Portfolio id="portfolio-section" />
+            <Portfolio />
             <Contact />
           </div>
         </main>

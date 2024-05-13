@@ -37,6 +37,7 @@ const Portfolio = () => {
 
     const totalPages = Math.ceil(projects.length / 4);
 
+
     return (
         <section
             id='Portfolio'
