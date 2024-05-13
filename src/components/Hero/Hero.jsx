@@ -4,17 +4,22 @@ import './hero.scss';
 import { Social } from '../Navbar/social/Social';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
-import LocomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/src/locomotive-scroll.scss';
 
 gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
 
-
-
     const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
+    const { scroll } = useLocomotiveScroll();
+
+    const scrollToPortfolio = () => {
+        if (scroll) {
+            scroll.scrollTo('#Portfolio');
+        }
+
+    };
 
     const portFolioImg = useRef();
 
@@ -91,6 +96,7 @@ const Hero = () => {
 
                             <motion.a
                                 className='my-port'
+                                onClick={scrollToPortfolio}
                                 onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
                                 style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>
@@ -107,4 +113,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero;
