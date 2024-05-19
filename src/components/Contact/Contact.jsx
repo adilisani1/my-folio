@@ -21,12 +21,16 @@ const Contact = () => {
             )
             .then(
                 (result) => {
-                    setSuccess(true)
+                    setSuccess(true);
+                    setError(false);
+                    formRef.current.reset();
                 },
                 (error) => {
                     setError(true);
+                    setSuccess(false);
                 }
             );
+
     };
 
     return (

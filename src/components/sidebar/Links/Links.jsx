@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
-const Links = () => {
+const Links = ({ setOpenSide }) => {
     const { scroll } = useLocomotiveScroll();
 
     const menuRef = useRef(null);
@@ -37,6 +37,8 @@ const Links = () => {
                 easing: [0.25, 0.0, 0.35, 1.0]
             });
         }
+
+        setOpenSide(false);
     };
     return (
 

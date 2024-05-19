@@ -7,14 +7,11 @@ import Links from './Links/Links';
 
 const Sidebar = ({ openSide, setOpenSide }) => {
 
-    // const [openNav, setOpenNav] = useState(false);
     const bgRef = useRef(null);
 
     const closeSide = () => {
         setOpenSide(false);
     }
-
-
 
     useEffect(() => {
         if (bgRef.current) {
@@ -42,7 +39,8 @@ const Sidebar = ({ openSide, setOpenSide }) => {
 
             <div>
                 <div ref={bgRef} className={`bg ${!openSide ? 'hidden' : ''}`} key="nav-menu">
-                    <Links />
+                    <Links
+                        setOpenSide={setOpenSide} />
                     <div className='closeButton' onClick={closeSide}>
                         <div className='burger'>
                             <div className='burgerActive'></div>

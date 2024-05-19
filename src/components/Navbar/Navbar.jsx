@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import './navbar.scss';
 import Sidebar from '../sidebar/Sidebar';
 
-const Navbar = () => {
-    const [openSide, setOpenSide] = useState(false);
+const Navbar = ({ openSide, setOpenSide }) => {
+    // const [openSide, setOpenSide] = useState(false);
     const sidebarRef = useRef(null);
 
     const handleOpen = () => {

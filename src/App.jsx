@@ -8,12 +8,16 @@ import Cursor from './components/cursor/Cursor';
 import Resume from './components/Resume/Resume';
 import Contact from './components/Contact/Contact';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 function App() {
   const containerRef = useRef(null);
+
+  // Sidebar
+  const [openSide, setOpenSide] = useState(false);
+
 
   return (
     <>
@@ -33,7 +37,10 @@ function App() {
 
         <main data-scroll-container ref={containerRef}>
           <div id="main-content" >
-            <Navbar />
+            <Navbar
+              openSide={openSide}
+              setOpenSide={setOpenSide}
+            />
             <Hero />
             <About />
             <Services />
