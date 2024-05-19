@@ -2,12 +2,37 @@ import { useRef, useState } from "react";
 import "./contact.scss";
 import emailjs from "@emailjs/browser";
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-    const ref = useRef();
     const formRef = useRef();
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
+
+    //Toaster
+    const notify = () => toast.success('📧 Email Sent Successfully', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    // Error
+    const errorToast = () => toast.error('❌ Error sending email', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -18,16 +43,19 @@ const Contact = () => {
                 "template_ykprq0c",
                 formRef.current,
                 "FYizqcCGK2NT0fWyT"
+
             )
             .then(
                 (result) => {
                     setSuccess(true);
                     setError(false);
                     formRef.current.reset();
+                    notify()
                 },
                 (error) => {
                     setError(true);
                     setSuccess(false);
+                    errorToast();
                 }
             );
 
@@ -67,15 +95,21 @@ const Contact = () => {
                                     </div>
                                     <input type="tel" placeholder="Phone (Optional)" name="phone" />
                                     <textarea required rows={8} placeholder="Message" name="message" />
-                                    <button>Submit</button>
+                                    <button type="submit">Submit</button>
                                     {error && "Error"}
                                     {success && "Email Sent Successfully"}
+
+
                                 </form>
                             </div>
+
+
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
         </>
     );

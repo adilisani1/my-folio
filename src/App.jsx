@@ -11,6 +11,7 @@ import Contact from './components/Contact/Contact';
 import React, { useRef, useState } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const containerRef = useRef(null);
@@ -48,6 +49,8 @@ function App() {
             <Portfolio />
             <Contact />
           </div>
+          <ToastContainer />
+
         </main>
       </LocomotiveScrollProvider>
     </>
