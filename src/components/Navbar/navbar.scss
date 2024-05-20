@@ -59,7 +59,7 @@
   .nav-container {
     position: absolute;
     right: 68px;
-    top: 60px;
+    top: 50px;
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -72,11 +72,11 @@
     cursor: pointer;
     transition: 0.3s;
     background: #140c1c;
-    z-index: 97;
+    z-index: 998;
 
     @include mobile {
       right: 30px;
-      top: 30px;
+      top: 40px;
 
       position: fixed;
     }
