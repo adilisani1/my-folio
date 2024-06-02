@@ -47,8 +47,35 @@ export const portfolioData = [
         alt: 'More App Project',
         speed: 0.6
     },
+
     {
         id: 5,
+        title: 'Unfontanero',
+        tag: 'website',
+        category: 'website',
+        link: 'https://www.unfontanero.com/',
+        imgSrc: '/assets/portfolio/projects/plumber.webp',
+        width: 650,
+        height: 800,
+        alt: 'Unfontanero Project',
+        speed: 0.6
+    },
+
+    {
+        id: 6,
+        title: 'Flashy Booth',
+        tag: 'website',
+        category: 'website',
+        link: 'https://flashybooth.com.au/',
+        imgSrc: '/assets/portfolio/projects/flash-booth.jpg',
+        width: 650,
+        height: 800,
+        alt: 'Flashy Booth',
+        speed: 0.6
+    },
+
+    {
+        id: 7,
         title: 'Creative Logo',
         tag: 'logo',
         category: 'logo',
@@ -60,7 +87,7 @@ export const portfolioData = [
         speed: 0.6
     },
     {
-        id: 6,
+        id: 8,
         title: 'Bird Logo',
         tag: 'logo',
         category: 'logo',
@@ -72,7 +99,7 @@ export const portfolioData = [
         speed: 0.6
     },
     {
-        id: 7,
+        id: 9,
         title: 'Rocky Speed',
         tag: 'logo',
         category: 'logo',
@@ -83,16 +110,7 @@ export const portfolioData = [
         alt: 'Rocky Speed Logo',
         speed: 0.6
     },
-    // {
-    //     id: 6,
-    //     title: 'Poster',
-    //     tag: 'more',
-    //     category: 'logo',
-    //     link: '#',
-    //     // imgSrc: 'https://cdn.pixabay.com/photo/2020/08/26/14/29/technology-5519649_1280.jpg',
-    //     width: 650,
-    //     height: 800,
-    //     alt: 'More App Project',
-    //     speed: 0.6
-    // }
+
+
+
 ];
