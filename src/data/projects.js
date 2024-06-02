@@ -28,7 +28,7 @@ export const portfolioData = [
         title: 'Food App',
         tag: 'website',
         category: 'website',
-        link: 'https://foodiemern-front-end.vercel.app/',
+        link: 'https://food-front-end-beta.vercel.app/',
         imgSrc: '/assets/portfolio/projects/portfolio-3.jpg',
         width: 650,
         height: 800,
