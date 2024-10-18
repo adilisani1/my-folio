@@ -11,21 +11,6 @@ const About = () => {
     const container = useRef();
 
 
-    useGSAP(() => {
-        const scrollTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: container.current,
-                scrub: true,
-                start: 'top 90%',
-                end: 'bottom top',
-                markers: true
-            }
-        });
-
-        scrollTimeline
-            .fromTo(".about-me", { y: 90 }, { opacity: 1, duration: 2, y: 0 }, 0)
-    });
-
 
 
     return (
