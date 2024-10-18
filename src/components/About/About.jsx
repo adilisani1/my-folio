@@ -1,17 +1,35 @@
 import React, { useRef } from 'react'
 import './about.scss';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/src/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const About = () => {
     const container = useRef();
 
 
+    useGSAP(() => {
+        const scrollTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.current,
+                scrub: true,
+                start: 'top 90%',
+                end: 'bottom top',
+                markers: true
+            }
+        });
+
+        scrollTimeline
+            .fromTo(".about-me", { y: 90 }, { opacity: 1, duration: 2, y: 0 }, 0)
+    });
+
 
 
     return (
-        <section id='About' className='about' data-scroll-section>
+        <section id='About' className='about' data-scroll-section ref={container} >
             <div className='about-container' >
                 <div className='content-width'>
                     <div className='about-wrapper'>

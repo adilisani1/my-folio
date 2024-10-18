@@ -21,7 +21,30 @@ const Hero = () => {
 
     };
 
+    // My SLOGAN
+    useGSAP(() => {
+        const introTimeline = gsap.timeline();
+        introTimeline
+            .set(".content-width", { opacity: 1 })
+            .from(".hero-container", {
+                scale: 2,
+                opacity: 0,
+                ease: "power4.out",
+                delay: .3,
+                stagger: 1,
+            })
+            .from('.my-port  img', {
+                ease: "power4.in",
+                rotation: 360,
+                duration: 12,
+                repeat: -1,
+                ease: 'linear',
+            })
+    })
+
+
     const portFolioImg = useRef();
+
 
     const handleMouseMove = (event) => {
         const rect = event.currentTarget.getBoundingClientRect();
@@ -37,15 +60,6 @@ const Hero = () => {
         setHoverStyle({ x: 0, y: 0 });
     };
 
-
-    useGSAP(() => {
-        gsap.to('.my-port img', {
-            rotation: 360,
-            duration: 12,
-            repeat: -1,
-            ease: 'linear',
-        });
-    }, {});
 
     return (
 
@@ -75,7 +89,7 @@ const Hero = () => {
 
                 <div className='wrapper' >
                     <div className='textContainer' >
-                        <div className='content-width'>
+                        <div className='content-width' style={{ opacity: 0 }}>
 
                             <div className='hero-container'>
                                 <div className='hero-me'>
