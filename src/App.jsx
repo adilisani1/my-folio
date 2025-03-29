@@ -9,9 +9,9 @@ import Resume from './components/Resume/Resume';
 import Contact from './components/Contact/Contact';
 
 import React, { useRef, useState } from 'react';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+
 import { ToastContainer } from 'react-toastify';
+import SmoothScroll from './components/SmoothScroll';
 
 function App() {
   const containerRef = useRef(null);
@@ -23,20 +23,11 @@ function App() {
   return (
     <>
       <Cursor />
-      <LocomotiveScrollProvider
 
-        options={
-          {
-            smooth: true,
-            multiplier: 1.5,
-            class: 'is-reveal'
-          }
-        }
-        containerRef={containerRef}
-        watch={[]}
-      >
 
-        <main data-scroll-container ref={containerRef}>
+      <SmoothScroll>
+
+        <main ref={containerRef}>
           <div id="main-content" >
             <Navbar
               openSide={openSide}
@@ -52,7 +43,8 @@ function App() {
           <ToastContainer />
 
         </main>
-      </LocomotiveScrollProvider>
+      </SmoothScroll>
+
     </>
   );
 }

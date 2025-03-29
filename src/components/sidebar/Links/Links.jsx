@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import { useLenis } from 'lenis/react';
 
 const Links = ({ setOpenSide }) => {
-    const { scroll } = useLocomotiveScroll();
+    const lenis = useLenis(); 
 
     const menuRef = useRef(null);
     const menuLinks = ['Home', 'About', 'Services', 'Resume', 'Portfolio', 'Contact'];
@@ -23,18 +23,16 @@ const Links = ({ setOpenSide }) => {
         });
     }, []);
 
-
     const handleNavigation = (event, item) => {
         event.preventDefault();
 
         const section = document.querySelector(`#${item}`);
+        if (section && lenis) {
 
-        if (section && scroll) {
-
-            scroll.scrollTo(section, {
-                offset: '-40',
-                duration: 800,
-                easing: [0.25, 0.0, 0.35, 1.0]
+            lenis.scrollTo(section, {
+                lerp: 0.0001,
+                duration: 3,
+                offset: -40
             });
         }
 

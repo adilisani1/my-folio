@@ -11,34 +11,34 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, CSSRulePlugin);
 
 const Resume = () => {
     const container = useRef();
-    // useGSAP(() => {
-    //     let timeline = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".timeline",
-    //             start: "0%, 50%",
-    //             end: "35%, 50%",
-    //             scrub: 1,
-    //         }
+    useGSAP(() => {
+        let timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".timeline",
+                start: "0%, 50%",
+                end: "35%, 50%",
+                scrub: 1,
+            }
 
-    //     });
-    //     timeline.fromTo(".line", { scaleY: 0 }, { scaleY: 1, backgroundColor: "white", duration: 2, transformOrigin: "top", delay: 2 }, 0);
-    //     timeline.fromTo(".dot", { backgroundColor: "none", opacity: 0 }, { backgroundColor: "white", opacity: 1, duration: 2, delay: 2 }, 0)
+        });
+        timeline.fromTo(".line", { scaleY: 0 }, { scaleY: 1, backgroundColor: "white", duration: 2, transformOrigin: "top", delay: 2 }, 0);
+        timeline.fromTo(".dot", { backgroundColor: "none", opacity: 0 }, { backgroundColor: "white", opacity: 1, duration: 2, delay: 2 }, 0)
 
-    //     let timeline2 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".coursera",
-    //             start: "50%, 50%",
-    //             end: "45%, 50%",
-    //             scrub: 1,
-    //         }
+        let timeline2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".coursera",
+                start: "50%, 50%",
+                end: "45%, 50%",
+                scrub: 1,
+            }
 
-    //     });
-    //     timeline2.fromTo(".dot", { backgroundColor: "none", opacity: 0 }, { backgroundColor: "white", opacity: 1, duration: 2, delay: 2 }, 0)
-    // }, { scope: container })
+        });
+        timeline2.fromTo(".dot", { backgroundColor: "none", opacity: 0 }, { backgroundColor: "white", opacity: 1, duration: 2, delay: 2 }, 0)
+    }, { scope: container })
 
 
     return (
-        <section id='Resume' ref={container} className='resume' data-scroll-section>
+        <section id='Resume' ref={container} className='resume'>
             <div className='resume-container' >
                 <div className='content-width'>
                     {/* Exp / Specialization */}

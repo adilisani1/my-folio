@@ -73,28 +73,28 @@ a {
   color: inherit;
 }
 
-html.has-scroll-smooth {
-  overflow: hidden;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+// html.has-scroll-smooth {
+//   overflow: hidden;
+//   position: fixed;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+// }
+// html.has-scroll-dragging {
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
 
-.has-scroll-smooth body {
-  overflow: hidden;
-}
+// .has-scroll-smooth body {
+//   overflow: hidden;
+// }
 
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh;
-}
+// .has-scroll-smooth [data-scroll-container] {
+//   min-height: 100vh;
+// }
 
 // html {
 //   scroll-behavior: smooth;
@@ -184,141 +184,4 @@ section {
     padding: 50px 0;
   }
 
-  // @include mobile {
-  //   padding: 50px 0;
-  // }
 }
-
-// .hero-section {
-//   padding: 125px 0 120px;
-//   position: relative;
-//   overflow: hidden;
-//   @include xxx-large {
-//     padding: 50px 0 50px;
-//   }
-
-//   @include large {
-//     padding: 0;
-//   }
-
-//   @include tablet {
-//     padding: 2px 0 20px;
-//   }
-
-//   @include mobile {
-//     padding: 0 0 20px;
-//   }
-
-// &::before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: 1;
-//     border-radius: 1948px;
-//     background: linear-gradient(180deg, rgba(35, 112, 255, 0.5) 0%, #8750f7 100%);
-//     filter: blur(270px);
-//     margin-top: 1%;
-//     border-radius: 50%;
-//     width: 450px;
-//     height: 350px;
-//     display: flex;
-//     justify-content: center;
-//     margin-left: auto;
-//     margin-right: auto;
-//     flex-shrink: 0;
-//     right: 0;
-
-// }
-// }
-
-// .about-section {
-//   padding-top: 100px;
-//   padding-bottom: 80px;
-
-//   @include large {
-//     padding-top: 80px;
-//     padding-bottom: 50px;
-//   }
-
-//   @include mobile {
-//     padding-top: 70px;
-//     padding-bottom: 20px;
-//   }
-// }
-
-// .services-section {
-//   padding-top: 120px;
-//   padding-bottom: 120px;
-
-//   @include large {
-//     padding-top: 80px;
-//     padding-bottom: 10px;
-//   }
-
-//   @include mobile {
-//     padding-top: 20px;
-//     padding-bottom: 0px;
-//   }
-// }
-
-// .resume-section {
-//   padding-top: 140px;
-//   padding-bottom: 140px;
-
-//   @include large {
-//     padding-top: 80px;
-//     padding-bottom: 10px;
-//   }
-
-//   @include mobile {
-//     padding-top: 20px;
-//     padding-bottom: 0px;
-//   }
-// }
-
-// .portfolio-section {
-//   padding-block: 80px;
-// }
-
-// .contact-section {
-//   padding-top: 120px;
-//   padding-bottom: 120px;
-
-//   @include large {
-//     padding-top: 80px;
-//   }
-
-//   @include mobile {
-//     padding-top: 10px;
-//   }
-// }
-
-// section {
-//     padding: 68px 0;
-//     position: relative;
-//     scroll-margin-top: 90px;
-//     overflow: clip;
-
-//     @media (min-width: 768px) {
-//         section {
-//             min-height: 100vh;
-//         }
-
-//     }
-// }
-
-// //theme
-// .theme {
-//   transition: all 0.5s ease;
-// }
-
-// .light {
-//   background-color: #ffffff;
-//   color: rgb(42, 42, 42);
-// }
-
-// .dark {
-//   background-color: #0d0a0f;
-//   color: rgb(211, 211, 211);
-// }

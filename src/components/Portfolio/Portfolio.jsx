@@ -30,9 +30,7 @@ const Portfolio = () => {
 
     //Pagination
     const handlePageSelect = selectedPage => {
-
         setPages(selectedPage);
-
     };
 
     const totalPages = Math.ceil(projects.length / 4);
@@ -42,7 +40,7 @@ const Portfolio = () => {
         <section
             id='Portfolio'
             className='portfolio '
-            data-scroll-section >
+        >
             <div className="portfolio-container" >
                 <div className='content-width'>
 

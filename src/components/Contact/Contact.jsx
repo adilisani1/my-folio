@@ -64,7 +64,7 @@ const Contact = () => {
     return (
         <>
 
-            <section id='Contact' className='contact-wrapper' data-scroll-section>
+            <section id='Contact' className='contact-wrapper' >
                 <div className="contact-container" >
                     <div className='content-width'>
                         <div

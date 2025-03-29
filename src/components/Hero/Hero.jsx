@@ -4,22 +4,24 @@ import './hero.scss';
 import { Social } from '../Navbar/social/Social';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
-
+import { useLenis } from 'lenis/react';
 
 gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
 
     const [hoverStyle, setHoverStyle] = useState({ x: 0, y: 0 });
-    const { scroll } = useLocomotiveScroll();
+    // const { scroll } = useLocomotiveScroll();
 
-    const scrollToPortfolio = () => {
-        if (scroll) {
-            scroll.scrollTo('#Portfolio');
-        }
+    // const scrollToPortfolio = () => {
+    //     if (scroll) {
+    //         scroll.scrollTo('#Portfolio');
+    //     }
 
-    };
+    // };
+
+    const lenis = useLenis();
+
 
     // My SLOGAN
     useGSAP(() => {
@@ -85,7 +87,7 @@ const Hero = () => {
             </div>
 
 
-            <section className='hero-section' data-scroll-section id='Home'>
+            <section className='hero-section' id='Home'>
 
                 <div className='wrapper' >
                     <div className='textContainer' >
@@ -110,8 +112,7 @@ const Hero = () => {
 
                             <motion.a
                                 className='my-port'
-                                onClick={scrollToPortfolio}
-                                onMouseMove={handleMouseMove}
+                                onClick={() => lenis.scrollTo('#Portfolio', { lerp: 0.001 })} onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
                                 style={{ x: hoverStyle.x, y: hoverStyle.y, transition: 'all 0.2s ease-out', cursor: 'pointer' }}>
                                 <i className="mouse-scroll ri-arrow-down-s-line"></i>

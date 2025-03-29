@@ -4,7 +4,7 @@ import { WebDevelopment, UxUiDesign, CmsDevelopment, LogoDesign } from './../../
 
 const Services = () => {
     return (
-        <section id='Services' className='services' data-scroll-section>
+        <section id='Services' className='services'>
             <div className="services-container">
                 <div className='content-width'>
                     <div className='services-text-container'>
