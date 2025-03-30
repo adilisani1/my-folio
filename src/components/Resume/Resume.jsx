@@ -15,8 +15,8 @@ const Resume = () => {
         let timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: ".timeline",
-                start: "0%, 50%",
-                end: "35%, 50%",
+                start: "top, 85%",
+                end: "bottom, 85%",
                 scrub: 1,
             }
 
@@ -27,8 +27,8 @@ const Resume = () => {
         let timeline2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".coursera",
-                start: "50%, 50%",
-                end: "45%, 50%",
+                start: "top, 85%",
+                end: "bottom, 85%",
                 scrub: 1,
             }
 

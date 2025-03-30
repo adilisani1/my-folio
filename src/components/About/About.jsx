@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import './about.scss';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import React, { useEffect, useRef } from "react";
+import "./about.scss";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +27,7 @@ const About = () => {
         );
 
         const skillItems = gsap.utils.toArray(
-            skillsContainerRef.current.querySelectorAll('.items')
+            skillsContainerRef.current.querySelectorAll(".items")
         );
         gsap.fromTo(
             skillItems,
@@ -48,36 +48,40 @@ const About = () => {
     }, []);
 
     return (
-        <section id='About' className='about'>
-            <div className='about-container'>
-                <div className='content-width'>
-                    <div className='about-wrapper'>
-
-                        <div className='about-text-container' ref={aboutTextRef}>
-                            <div className='about-me'>
+        <section id="About" className="about">
+            <div className="about-container">
+                <div className="content-width">
+                    <div className="about-wrapper">
+                        <div className="about-text-container" ref={aboutTextRef}>
+                            <div className="about-me">
                                 <span className="about-icon ri-user-settings-line"></span>
-                                <h3 className='about-me-title'>About Me</h3>
+                                <h3 className="about-me-title">About Me</h3>
                             </div>
                             <div className="about-text-wrapper">
-                                <p className='about-text'>
-                                    I am a skilled web developer proficient in React JS, Redux, and WordPress, with a strong background in JavaScript.
+                                <p className="about-text">
+                                    I'm a passionate Frontend Engineer specializing in React JS,
+                                    dedicated to building dynamic, accessible web applications
+                                    that redefine what's possible. 
                                 </p>
-                                <p className='about-text'>
-                                    Despite the challenges posed by Muscular Dystrophy and being wheelchair-bound for the past 10 years, I have continued to excel and demonstrate my ability to multitask and deliver high-quality work.
+                                <p className="about-text">
+                                    Living with Muscular Dystrophy and being a wheelchair user for
+                                    the past 10 years has not only shaped my abilities but also
+                                    fueled my drive to create and break new ground. I believe
+                                    that every challenge is an opportunity.
                                 </p>
                             </div>
                         </div>
 
                         {/* Skills Section */}
-                        <div className='skills-wrapper' ref={skillsContainerRef}>
-                            <div className='skills-text-container'>
-                                <div className='skills-me'>
+                        <div className="skills-wrapper" ref={skillsContainerRef}>
+                            <div className="skills-text-container">
+                                <div className="skills-me">
                                     <span className="skills-icon ri-lightbulb-line"></span>
-                                    <h3 className='skill-title'>My Skills</h3>
+                                    <h3 className="skill-title">My Skills</h3>
                                 </div>
                             </div>
-                            <div className='skills'>
-                                <div className='items'>
+                            <div className="skills">
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -93,7 +97,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -104,12 +108,12 @@ const About = () => {
                                             <h4 className="fz-18">JavaScript</h4>
                                         </div>
                                     </div>
-                                    <div className='skill-progress'>
-                                        <span className='progress' />
+                                    <div className="skill-progress">
+                                        <span className="progress" />
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -125,7 +129,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -141,7 +145,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -157,7 +161,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -173,7 +177,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -189,7 +193,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className='items'>
+                                <div className="items">
                                     <div className="item-data">
                                         <div className="mr-30">
                                             <div className="img icon-img-40">
@@ -206,7 +210,6 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
