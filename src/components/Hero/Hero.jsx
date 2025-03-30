@@ -82,7 +82,7 @@ const Hero = () => {
                 </div>
                 <Social />
                 <div className='resume-button'>
-                    <a className='resume' href='#resume'>Resume</a>
+                    <a className='resume' download href='/assets/portfolio/projects/adil-resume.pdf'>Resume</a>
                 </div>
             </div>
 
