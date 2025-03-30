@@ -1,6 +1,5 @@
 export const portfolioData = [
   {
-    id: 1,
     title: "Ecommerce",
     tag: "website",
     category: "website",
@@ -12,7 +11,6 @@ export const portfolioData = [
     speed: 0.6,
   },
   {
-    id: 2,
     title: "Weather App",
     tag: "website",
     category: "website",
@@ -24,7 +22,6 @@ export const portfolioData = [
     speed: 0.6,
   },
   {
-    id: 3,
     title: "Food App",
     tag: "website",
     category: "website",
@@ -36,7 +33,6 @@ export const portfolioData = [
     speed: 0.6,
   },
   {
-    id: 4,
     title: "Uniswap Replica",
     tag: "replica",
     category: "replica",
@@ -49,7 +45,18 @@ export const portfolioData = [
   },
 
   {
-    id: 5,
+    title: "Booking Website",
+    tag: "website",
+    category: "website",
+    link: "https://dev.domusmeralda.com/",
+    imgSrc: "/assets/portfolio/projects/travel.jpg",
+    width: 650,
+    height: 800,
+    alt: "Booking Project",
+    speed: 0.6,
+  },
+
+  {
     title: "Unfontanero",
     tag: "website",
     category: "website",
@@ -62,7 +69,6 @@ export const portfolioData = [
   },
 
   {
-    id: 6,
     title: "Flashy Booth",
     tag: "website",
     category: "website",
@@ -75,7 +81,6 @@ export const portfolioData = [
   },
 
   {
-    id: 7,
     title: "Creative Logo",
     tag: "logo",
     category: "logo",
@@ -87,7 +92,6 @@ export const portfolioData = [
     speed: 0.6,
   },
   {
-    id: 8,
     title: "Bird Logo",
     tag: "logo",
     category: "logo",
@@ -99,7 +103,6 @@ export const portfolioData = [
     speed: 0.6,
   },
   {
-    id: 9,
     title: "Rocky Speed",
     tag: "logo",
     category: "logo",
@@ -112,7 +115,6 @@ export const portfolioData = [
   },
 
   {
-    id: 10,
     title: "Factor Linens",
     tag: "website",
     category: "website",

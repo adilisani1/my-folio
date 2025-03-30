@@ -70,8 +70,8 @@ const Portfolio = () => {
 
                     {/* <!-- Portfolio list --> */}
                     <div className='portfolio-list' ref={portfolioRef}>
-                        {projects.slice(pages * 4 - 4, pages * 4).map(project => (
-                            <div className='portfolio-wrapper' key={project.id}>
+                        {projects.slice(pages * 4 - 4, pages * 4).map((project, index) => (
+                            <div className='portfolio-wrapper' key={index}>
                                 <div className='portfolio-card ' data-scroll data-scroll-direction='vertical'>
                                     <figure className='card-banner img-holder has-before' style={{ '--width': project.width, '--height': project.height }}>
                                         <img className='img-cover' width={project.width} height={project.height} src={project.imgSrc} alt={project.alt} />
