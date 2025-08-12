@@ -23,12 +23,15 @@ const Cursor = () => {
             x: position.x,
             y: position.y,
             duration: 1,
-            ease: "power4.out",
+            scrub: true,
+            ease: "power2.out",
         });
     }, [position]);
 
     return (
-        <div ref={cursorRef} className='cursor'></div>
+        <div ref={cursorRef} className='cursor'>
+            <div className='cursor-dot'></div>
+        </div>
     );
 }
 

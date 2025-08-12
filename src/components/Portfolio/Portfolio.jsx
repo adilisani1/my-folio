@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './portfolio.scss';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { portfolioData } from '../../data/projects';
 
@@ -8,9 +8,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = () => {
 
+
+
+
     const [projects, setProjects] = useState(portfolioData);
     const [pages, setPages] = useState(1);
     const portfolioRef = useRef(null);
+    const EACH_PAGE_TO_SHOW = 4;
 
     //Categories
     const [activeCategory, setActiveCategory] = useState('All');
@@ -33,7 +37,56 @@ const Portfolio = () => {
         setPages(selectedPage);
     };
 
-    const totalPages = Math.ceil(projects.length / 4);
+    const totalPages = projects.length;
+    const noOfPages = Math.ceil(totalPages / EACH_PAGE_TO_SHOW);
+    const start = (pages - 1) * EACH_PAGE_TO_SHOW;
+    const end = start + EACH_PAGE_TO_SHOW;
+
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+
+
+
+            const tl = gsap.timeline();
+
+            tl.fromTo(".tabs", {
+                opacity: 0, y: 50
+            },
+                {
+                    opacity: 1,
+                    duration: 1,
+                    stagger: 0.2,
+                    y: 0,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: ".tabs",
+                        start: "top 80%",
+                        end: "bottom 80%",
+                        scrub: true
+                    }
+                });
+
+            tl.fromTo(".portfolio-wrapper", {
+                opacity: 0, y: 50
+
+            }, {
+                opacity: 1,
+                duration: 1,
+                y: 0,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: portfolioRef.current,
+                    start: "top 80%",
+                    end: "bottom 80%",
+                    scrub: true
+                }
+            })
+        })
+
+
+        return () => ctx.revert();
+    }, [])
 
 
     return (
@@ -53,9 +106,9 @@ const Portfolio = () => {
 
                     {/* <!-- Categories --> */}
                     <div className="portfolio-category">
-                        <ul>
+                        <ul className=''>
                             {filteredCat.map((category, index) => (
-                                <li key={index}>
+                                <li key={index} className=' tabs'>
                                     <button
                                         className={activeCategory === category ? 'active' : ''}
                                         onClick={() => handleCategoryClick(category)}>
@@ -70,7 +123,7 @@ const Portfolio = () => {
 
                     {/* <!-- Portfolio list --> */}
                     <div className='portfolio-list' ref={portfolioRef}>
-                        {projects.slice(pages * 4 - 4, pages * 4).map((project, index) => (
+                        {projects.slice(start, end).map((project, index) => (
                             <div className='portfolio-wrapper' key={index}>
                                 <div className='portfolio-card ' data-scroll data-scroll-direction='vertical'>
                                     <figure className='card-banner img-holder has-before' style={{ '--width': project.width, '--height': project.height }}>
@@ -99,10 +152,10 @@ const Portfolio = () => {
                     <div className='pagination-area'>
                         <ul className="pagination">
 
-                            {[...Array(totalPages).keys()].map((page) => (
-                                <li key={page} className="page-item">
-                                    <button className={`page-link ${pages === page + 1 ? 'active' : ''}`} onClick={() => handlePageSelect(page + 1)}>
-                                        {`0${page + 1}`}
+                            {[...Array(noOfPages).keys()].map((_, index) => (
+                                <li key={index} className="page-item">
+                                    <button className={`page-link ${pages === index + 1 ? 'active' : ''}`} onClick={() => handlePageSelect(index + 1)}>
+                                        {`0${index + 1}`}
                                     </button>
                                 </li>
                             ))}

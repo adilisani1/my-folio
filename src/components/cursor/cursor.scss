@@ -8,6 +8,14 @@
     z-index: 9993;
     border: 1px solid #fff;
 
+    .cursor-dot{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+       
+        border-radius: 50%;
+    }
 
     @include mobile {
         display: none;

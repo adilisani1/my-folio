@@ -45,6 +45,8 @@ const About = () => {
                 },
             }
         );
+
+
     }, []);
 
     return (

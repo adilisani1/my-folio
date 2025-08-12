@@ -1,8 +1,38 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './sevices.scss';
 import { WebDevelopment, UxUiDesign, CmsDevelopment, LogoDesign } from './../../icons/icons';
+import { gsap } from 'gsap';
 
 const Services = () => {
+
+    const myServiceRef = useRef(null);
+
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            const servicesItems = gsap.utils.toArray(
+                myServiceRef.current.querySelectorAll(".my-services-parent")
+            )
+            gsap.fromTo(servicesItems,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.2,
+                    scrollTrigger: {
+                        trigger: myServiceRef.current,
+                        start: "top 80%",
+                        end: "bottom 80%",
+                        scrub: true
+
+
+                    }
+                });
+        })
+        return () => ctx.revert();
+    }, [])
+
     return (
         <section id='Services' className='services'>
             <div className="services-container">
@@ -20,10 +50,10 @@ const Services = () => {
                         <h2 className='services-title'>My Services</h2>
                     </div>
 
-                    <div className='my-services-container'>
+                    <div className='my-services-container' ref={myServiceRef}>
+
                         <div className="my-services-parent">
                             <div className='my-services-items'>
-
                                 <h3 className='my-services-title'>
                                     UX-UI <span>Design</span>
                                 </h3>
@@ -31,7 +61,6 @@ const Services = () => {
                                 <div>
                                     <p className='my-services-text'>The UI/UX Design Showcase is where form and imagination come together. Discover a world where the user experience is everything. See how user-centric design improves digital experiences by looking through the portfolio.</p>
                                 </div>
-
                             </div>
                             <div className='my-services-items'>
 
@@ -71,8 +100,8 @@ const Services = () => {
 
                             </div>
                         </div>
-                    </div>
 
+                    </div>
 
                 </div>
             </div>
