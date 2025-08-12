@@ -1,4 +1,5 @@
 export const portfolioData = [
+  // WEBSITES
   {
     title: "Ecommerce",
     tag: "website",
@@ -32,17 +33,6 @@ export const portfolioData = [
     alt: "Food App Project",
     speed: 0.6,
   },
-  {
-    title: "Uniswap Replica",
-    tag: "replica",
-    category: "replica",
-    link: "https://uniswap-dublicate.vercel.app/",
-    imgSrc: "/assets/portfolio/projects/portfolio-6.png",
-    width: 650,
-    height: 800,
-    alt: "More App Project",
-    speed: 0.6,
-  },
 
   {
     title: "Booking Website",
@@ -53,6 +43,18 @@ export const portfolioData = [
     width: 650,
     height: 800,
     alt: "Booking Project",
+    speed: 0.6,
+  },
+
+  {
+    title: "Factor Linens",
+    tag: "website",
+    category: "website",
+    link: "https://factorlinens.com/",
+    imgSrc: "/assets/portfolio/projects/factorlenin.jpg",
+    width: 650,
+    height: 800,
+    alt: "factor linens",
     speed: 0.6,
   },
 
@@ -79,6 +81,35 @@ export const portfolioData = [
     alt: "Flashy Booth",
     speed: 0.6,
   },
+
+  // APPS
+
+  {
+    title: "TeleHealth App",
+    tag: "Coming Soon",
+    category: "apps",
+    // link: "https://happycart-frontend-adilisani.vercel.app/",
+    imgSrc: "/dummy-app.png",
+    width: 650,
+    height: 800,
+    alt: "TeleHealth App",
+    speed: 0.6,
+  },
+
+  // REPLICAS
+  {
+    title: "Uniswap Replica",
+    tag: "replica",
+    category: "replica",
+    link: "https://uniswap-dublicate.vercel.app/",
+    imgSrc: "/assets/portfolio/projects/portfolio-6.png",
+    width: 650,
+    height: 800,
+    alt: "More App Project",
+    speed: 0.6,
+  },
+
+  // LOGOS
 
   {
     title: "Creative Logo",
@@ -111,18 +142,6 @@ export const portfolioData = [
     width: 650,
     height: 800,
     alt: "Rocky Speed Logo",
-    speed: 0.6,
-  },
-
-  {
-    title: "Factor Linens",
-    tag: "website",
-    category: "website",
-    link: "https://factorlinens.com/",
-    imgSrc: "/assets/portfolio/projects/factorlenin.jpg",
-    width: 650,
-    height: 800,
-    alt: "factor linens",
     speed: 0.6,
   },
 ];
