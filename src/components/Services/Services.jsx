@@ -36,7 +36,6 @@ const Services = () => {
         },
     ];
 
-    // ✅ Same GSAP animation
     useEffect(() => {
         let ctx = gsap.context(() => {
             const servicesItems = gsap.utils.toArray(

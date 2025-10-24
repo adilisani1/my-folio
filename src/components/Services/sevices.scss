@@ -160,6 +160,17 @@
             @include tablet {
               background-image: none;
             }
+.mb-dev {
+  width: 100%;
+  fill:none;
+  max-width: 4.2rem;
+  stroke: #8750f7;
+  transition: all 0.3s ease;
+};
+
+.mb-dev.svg:hover {
+  stroke: #ffffff;
+}
 
             svg {
               width: 100%;

@@ -220,42 +220,21 @@ export const Coursera = () => (
 
 
 export const MobileDevelopment = () => (
-    <svg
+    <svg className='mb-dev'
         viewBox="0 0 64 64"
         xmlns="http://www.w3.org/2000/svg"
-        fillRule="evenodd"
-        clipRule="evenodd"
-        imageRendering="optimizeQuality"
-        shapeRendering="geometricPrecision"
-        textRendering="geometricPrecision"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
     >
-        <rect
-            x="14"
-            y="4"
-            width="36"
-            height="56"
-            rx="4"
-            ry="4"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-        />
-        <rect
-            x="20"
-            y="10"
-            width="24"
-            height="38"
-            rx="2"
-            ry="2"
-            fill="currentColor"
-            opacity="0.1"
-        />
-        <circle cx="32" cy="52" r="2" fill="currentColor" />
-        <path
-            d="M24 16h16M24 22h16M24 28h10"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-        />
+        <rect x="16" y="6" width="32" height="52" rx="4" ry="4" />
+
+        <line x1="24" y1="20" x2="40" y2="20" />
+        <line x1="24" y1="28" x2="40" y2="28" />
+        <line x1="24" y1="36" x2="34" y2="36" />
+
+        <circle cx="32" cy="50" r="2" fill="currentColor" />
     </svg>
 );
