@@ -71,7 +71,7 @@ const Resume = () => {
                                     <ul className='' id='work_experience'>
                                         <div className='item-data'>
                                             <span className="ri-circle-fill dot-icon"></span>
-                                            <li>Developing Applications using ReactJS, Redux.</li>
+                                            <li>Developing applications using ReactJS, NextJS, and React Native.</li>
                                         </div>
                                         <div className='item-data'>
                                             <span className="ri-circle-fill dot-icon"></span>

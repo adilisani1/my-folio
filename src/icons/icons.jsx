@@ -218,3 +218,44 @@ export const Coursera = () => (
 
 )
 
+
+export const MobileDevelopment = () => (
+    <svg
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        imageRendering="optimizeQuality"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
+    >
+        <rect
+            x="14"
+            y="4"
+            width="36"
+            height="56"
+            rx="4"
+            ry="4"
+            stroke="currentColor"
+            strokeWidth="2"
+            fill="none"
+        />
+        <rect
+            x="20"
+            y="10"
+            width="24"
+            height="38"
+            rx="2"
+            ry="2"
+            fill="currentColor"
+            opacity="0.1"
+        />
+        <circle cx="32" cy="52" r="2" fill="currentColor" />
+        <path
+            d="M24 16h16M24 22h16M24 28h10"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+        />
+    </svg>
+);
