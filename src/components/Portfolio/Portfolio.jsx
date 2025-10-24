@@ -8,10 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = () => {
 
-
-
-
     const [projects, setProjects] = useState(portfolioData);
+
     const [pages, setPages] = useState(1);
     const portfolioRef = useRef(null);
     const EACH_PAGE_TO_SHOW = 4;
@@ -19,7 +17,7 @@ const Portfolio = () => {
     //Categories
     const [activeCategory, setActiveCategory] = useState('All');
 
-    var filteredCat = ['All', ...new Set(portfolioData.map((project) => project.category))]
+    let filteredCat = ['All', ...new Set(portfolioData.map((project) => project.category))]
 
     const handleCategoryClick = category => {
         if (category === 'All') {

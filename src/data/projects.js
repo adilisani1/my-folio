@@ -34,17 +34,17 @@ export const portfolioData = [
     speed: 0.6,
   },
 
-  {
-    title: "Booking Website",
-    tag: "website",
-    category: "website",
-    link: "https://dev.domusmeralda.com/",
-    imgSrc: "/assets/portfolio/projects/travel.jpg",
-    width: 650,
-    height: 800,
-    alt: "Booking Project",
-    speed: 0.6,
-  },
+  // {
+  //   title: "Booking Website",
+  //   tag: "website",
+  //   category: "website",
+  //   link: "https://dev.domusmeralda.com/",
+  //   imgSrc: "/assets/portfolio/projects/travel.jpg",
+  //   width: 650,
+  //   height: 800,
+  //   alt: "Booking Project",
+  //   speed: 0.6,
+  // },
 
   {
     title: "Factor Linens",
