@@ -61,9 +61,7 @@ const About = () => {
                             </div>
                             <div className="about-text-wrapper">
                                 <p className="about-text">
-                                    I'm a passionate Frontend Engineer specializing in React JS,
-                                    dedicated to building dynamic, accessible web applications
-                                    that redefine what's possible. 
+                                    I’m a MERN stack developer who loves working with React.js, Next.js, React Native, and WordPress. I’ve spent the last few years diving deep into front-end development, building clean, fast, and user-friendly websites and apps.
                                 </p>
                                 <p className="about-text">
                                     Living with Muscular Dystrophy and being a wheelchair user for
