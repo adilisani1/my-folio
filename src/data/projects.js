@@ -22,6 +22,19 @@ export const portfolioData = [
     alt: "Weather Project",
     speed: 0.6,
   },
+
+  {
+    title: "Kavehome Furniture ",
+    tag: "website",
+    category: "website",
+    link: "https://kavehome-replica.vercel.app/",
+    imgSrc: "/assets/portfolio/projects/project-kavehome.avif",
+    width: 650,
+    height: 800,
+    alt: "Furniture Ecommerce Project",
+    speed: 0.6,
+  },
+
   {
     title: "Food App",
     tag: "website",
@@ -33,18 +46,6 @@ export const portfolioData = [
     alt: "Food App Project",
     speed: 0.6,
   },
-
-  // {
-  //   title: "Booking Website",
-  //   tag: "website",
-  //   category: "website",
-  //   link: "https://dev.domusmeralda.com/",
-  //   imgSrc: "/assets/portfolio/projects/travel.jpg",
-  //   width: 650,
-  //   height: 800,
-  //   alt: "Booking Project",
-  //   speed: 0.6,
-  // },
 
   {
     title: "Factor Linens",
@@ -96,11 +97,10 @@ export const portfolioData = [
     speed: 0.6,
   },
 
-  // REPLICAS
   {
     title: "Uniswap Replica",
-    tag: "replica",
-    category: "replica",
+    tag: "website",
+    category: "website",
     link: "https://uniswap-dublicate.vercel.app/",
     imgSrc: "/assets/portfolio/projects/portfolio-6.png",
     width: 650,
