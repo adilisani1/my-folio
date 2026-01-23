@@ -12,15 +12,23 @@ const Navbar = ({ openSide, setOpenSide }) => {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (openSide && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-                setOpenSide(false)
+            // Don't close if clicking on a link or inside the sidebar
+            const isLink = event.target.closest('a[href^="#"]');
+            const isInsideSidebar = sidebarRef.current?.contains(event.target);
+            
+            // Only close if clicking outside and not on a link
+            if (openSide && !isInsideSidebar && !isLink) {
+                setOpenSide(false);
             }
         }
 
-        document.body.addEventListener('click', handleClickOutside, true)
+        // Use capture phase but check properly
+        if (openSide) {
+            document.body.addEventListener('click', handleClickOutside, true);
+        }
 
         return () => {
-            document.body.removeEventListener('click', handleClickOutside, false)
+            document.body.removeEventListener('click', handleClickOutside, true);
         }
 
     }, [openSide])
