@@ -4,7 +4,7 @@ export const portfolioData = [
     title: "Ecommerce",
     tag: "website",
     category: "website",
-    link: "https://happycart-frontend-adilisani.vercel.app/",
+    link: "https://happycart-ashen.vercel.app/",
     imgSrc: "/assets/portfolio/projects/ecommerce-image.jpg",
     width: 650,
     height: 800,
